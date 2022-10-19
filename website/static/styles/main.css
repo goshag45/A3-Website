@@ -1,0 +1,159 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: #a67d37;
+}
+.navbar {
+    background:#6e5122;
+}
+.nav-link,
+.navbar-brand {
+    color: #fff;
+    cursor: pointer;
+    margin-left: 1em;
+}
+.nav-link {
+    margin-right: 1em !important;
+}
+.nav-link:hover {
+    color: #000;
+}
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+.jumbotron {
+    color: #fff;
+}
+
+.ticket {
+    text-align: center;
+    padding-top: 5rem;
+}
+
+.step-num {
+    font-size: 60px;
+}
+
+
+.book-card{
+    flex-direction: row;
+}
+
+.card-img {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+}
+
+.prev-card-img {
+    width: 100%;
+    height: 35vh;
+    object-fit: cover;
+}
+
+
+.search-sec{
+    padding: 2rem;
+}
+
+.form-control{
+    -webkit-appearance: menulist;
+    display: block;
+    width: 100%;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #55595c;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    height: calc(3rem + 2px) !important;
+    border-radius:0; 
+}
+
+.form-desc {
+    -webkit-appearance: menulist;
+    display: block;
+    width: 100%;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #55595c;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius:0; 
+    padding: 20px;
+
+}
+
+.form-file {
+    -webkit-appearance: menulist;
+    display: block;
+    width: 100%;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #55595c;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius:0; 
+    padding: 5px;
+
+}
+
+
+.wrn-btn{
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    height: auto;
+    border-radius:1;
+    padding: 12px;
+
+
+}
+
+.search-button{
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius:1;
+    padding: 12px;
+}
+
+.more-details{
+    background-color:#938874;
+    color: #fafafa;
+}
+
+.social a {
+    color: #41340c;
+    font-size: 25px;
+    padding: 10px;
+    float: left;
+    transition: all .5s ease;
+}
+
+
+.social a:hover {
+    color: white;
+  }
+
+
+.date-select i {
+    color: #41340c;
+    font-size: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.time-select i {
+    color: #41340c;
+    font-size: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: white;
+}
+
+
+
