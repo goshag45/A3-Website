@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block header %}
-    <main>
+    
       <div class="container mt-3">
         <!--Create a carousel-->
         <div class="row">
@@ -15,13 +15,13 @@
               </div>
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="img/carousel1.jpg" class="d-block w-100" alt="...">
+                  <img src="/static/img/carousel1.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                  <img src="img/carousel2.png" class="d-block w-100" alt="...">
+                  <img src="/static/img/carousel2.png" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                  <img src="img/carousel3.png" class="d-block w-100" alt="...">
+                  <img src="static/img/carousel3.png" class="d-block w-100" alt="...">
                 </div>
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
@@ -35,7 +35,9 @@
             </div>
           </div>
         </div>
+{% endblock %}
 
+{% block content %}
         <div class="jumbotron">
           <h1 class="display-7">Discover artists near you</h1>
           <hr class="my-6">
@@ -121,35 +123,7 @@
             </div>
           </div>
 
-          <!--Create event 3 -->
-          <div class="col-lg-3 col-md-3 col-sm-6">
-            <div class="card mb-3">
-              <img src="img/korbz.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">The Korbz</h5>
-                <p class="card-text">Explore the upcoming </p>
-                <a href="details.html" class="btn more-details">More Details</a>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Status:<span style="color:green"> Open</span></small>
-              </div>
-            </div>
-          </div>
-
-          <!--Create event 4 -->
-          <div class="col-lg-3 col-md-3 col-sm-6">
-            <div class="card mb-3">
-              <img src="img/henry.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Ahn Chi</h5>
-                <p class="card-text">Explore the upcoming </p>
-                <a href="details.html" class="btn more-details">More Details</a>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Status:<span style="color:orange"> Sold out</span></small>
-              </div>
-            </div>
-          </div>
+ 
 
           <div class="row">
             <div class="jumbotron col-md-12 mt-3">
@@ -164,7 +138,7 @@
                 <img src="img/fav artist.png" class="card-img-top" alt="...">
                 <div class="card-body">
                   <a href="index.html" class="text-decoration-none link-dark">
-                    <hp class="card-title stretched-link"></p>
+                    <p class="card-title stretched-link"></p>
                   </a>
                 </div>
               </div>
@@ -181,7 +155,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12">
 
                 <div class="card mb-5">
-                  <img src="img/artist of the month.jpg" class="card-img-top" alt="...">
+                  <img src="static/img/artist of the month.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
                     <a href="index.html" class="text-decoration-none link-dark">
                       <p class="card-title stretched-link"></p>
@@ -190,5 +164,5 @@
                 </div>
         </div>
       
-    </main>
+    
 {% endblock %}
