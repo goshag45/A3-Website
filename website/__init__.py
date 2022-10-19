@@ -29,10 +29,10 @@ def create_app():
     login_manager.init_app(app)
 
     #create a user loader function takes userid and returns User
-    #from .models import User  # importing here to avoid circular references
-    #@login_manager.user_loader
-    #def load_user(user_id):
-    #    return User.query.get(int(user_id))
+    from . import models  # importing here to avoid circular references
+    @login_manager.user_loader
+    def load_user(user_id):
+       return User.query.get(int(user_id))
 
     #importing views module here to avoid circular references
     # a commonly used practice.
@@ -43,6 +43,4 @@ def create_app():
     app.register_blueprint(auth.bp)
     
     return app
-
-
 
