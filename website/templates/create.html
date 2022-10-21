@@ -1,0 +1,196 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <link rel="icon" href="img/logo.PNG">
+        <title>The backyard concert</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+        <!-- Include Moment.js CDN -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+    
+        <!-- Include Bootstrap DateTimePicker CDN -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+
+ 
+    </head>
+    <body>
+        <header>
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="index.html">
+            <img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            The Backyard Concert
+            </a>
+
+            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="details.html">Browse Events</a>
+                <a class="nav-item nav-link" href="create.html">Create An Event</a>
+                <a class="nav-item nav-link" href="history.html">My Account</a>
+                <a class="nav-item nav-link" href="index.html">Logout</a>
+            </div>
+            </div>
+        </nav>
+        </header>
+        <main>
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col mt-2 mb-3">
+                        <img src="img/create event.png" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="jumbotron">
+                            <h1 class="step-num"><span style="color:burlywood">Step 1</span></h1>
+                            <p>Enter artist name and select genre</p>
+                            <hr class="my-6">
+                        </div>
+                    </div>
+
+                    <form>
+                        <div class="form-group">
+                            <div class="col-lg-6 col-md-8 col-sm-8 mb-3">
+                                <input type="name" class="form-control" placeholder="E.g. NIKI">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-3 col-sm-6 p-0">
+                            <select class="form-control">
+                                <option>Select a genre</option>
+                                <option>Pop</option>
+                                <option>Country</option>
+                                <option>Jazz</option>
+                                <option>Rnb</option>
+                                <option>Rock</option>
+                                <option>Other...</option>
+                            </select>
+                        </div>
+                    
+                    <div class="col-lg-12 col-md-12 col-sm-12 mt-5">
+                        <div class="jumbotron">
+                            <h1 class="step-num"><span style="color:burlywood">Step 2:</span></h1>
+                            <p>Select date and time + location</p>
+                            <hr class="my-6">
+                        </div>
+                    </div>
+
+                        <div class="row">
+                            <!--Date selector-->
+                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                <div class="input-group date" id="datepicker">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text bg-white" style="border-radius:0px;">
+                                            <div class="date-select">
+                                                <i class="fa fa-calendar"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Select Date">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                <input class="form-control" type="text" id="datetime" placeholder="Time" />
+                            </div>
+                        </div>
+                            
+                        <div class="form-group">
+                            <div class="col-lg-6 col-md-8 col-sm-8 mt-3">
+                                <input type="name" class="form-control" placeholder="E.g. 21 Kirby Avenue, West End">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-3 col-sm-6 mt-3">
+                            <select class="form-control">
+                                <option>Select a city</option>
+                                <option>Brisbane</option>
+                                <option>Sydney</option>
+                                <option>Melbourne</option>
+                                <option>Adelaide</option>
+                                <option>Perth</option>
+                            </select>
+                          </div>
+                                           
+                    <div class="col-lg-12 col-md-12 col-sm-12 mt-5">
+                        <div class="jumbotron">
+                            <h1 class="step-num"><span style="color:burlywood">Step 3:</span></h1>
+                            <p>Write a description</p>
+                            <hr class="my-6">
+                        </div>
+                    </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-8 col-md-8 col-sm-10">
+                                <textarea class="form-desc" placeholder="Tell us about yourself or what you're performing" rows="5"></textarea>
+                            </div>
+                        </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 mt-5">
+                        <div class="jumbotron">
+                            <h1 class="step-num"><span style="color:burlywood">Step 4:</span></h1>
+                            <p>Upload event picture</p>
+                            <hr class="my-6">
+                        </div>
+                    </div>
+    
+                        <div class="mb-3">
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <input class="form-file" type="file">
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="col-lg-3 col-md-3 col-sm-6 mt-4 mb-5">
+                        <a href=details.html type="button" class="btn btn-danger wrn-btn">
+                          Create Event
+                        </a>
+                      </div>
+        </main> 
+
+        <script type="text/javascript">
+            $(function() {
+                $('#datepicker').datepicker();
+            });
+        </script>
+
+        <script>
+            // Sets format to to datetimepicker
+            $('#datetime').datetimepicker({
+                format: 'hh:mm a'
+            });
+        </script>
+    
+        <!--Footer-->
+        <footer class="bg-light text-center text-lg-start">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © Copyright by Renee Kwok 2022 
+        </div>
+        <!-- Copyright -->
+        </footer>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+
+    </body>
+</html>
