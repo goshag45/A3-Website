@@ -19,7 +19,7 @@ class Concert(db.Model):
     image = db.Column(db.String(400))
     date = db.Column(db.DateTime)
 
-    comments = db.relationship('Comment', backref='Concert')
+    comments = db.relationship('Comment', backref='concert')
 	
     def __repr__(self):
         return "<Name: {}>".format(self.name)
