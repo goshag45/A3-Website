@@ -1,36 +1,17 @@
 {% extends 'base.html' %}
 
+{% import "bootstrap/form.html" as wtf %}
+
 {% block header %}
 {% endblock %}
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="index.html">
-                <img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-                The Backyard Concert
-            </a>
-
-            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="details.html">Browse Events</a>
-                    <a class="nav-item nav-link" href="create.html">Create An Event</a>
-                    <a class="nav-item nav-link" href="history.html">My Account</a>
-                    <a class="nav-item nav-link" href="index.html">Logout</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+    
     <main>
         <div class="container mt-3">
             <div class="row">
                 <div class="col mt-2 mb-3">
-                    <img src="img/create event.png" class="d-block w-100" alt="...">
+                    <img src="{{ConcertForm.image}}" class="d-block w-100" alt="...">
                 </div>
             </div>
 
