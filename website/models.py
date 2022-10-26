@@ -11,7 +11,7 @@ class User(db.Model, UserMixin):
 
     comments = db.relationship('Comment', backref='user')
 
-class Destination(db.Model):
+class Concert(db.Model):
     __tablename__ = 'concerts'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80))
@@ -19,7 +19,7 @@ class Destination(db.Model):
     image = db.Column(db.String(400))
     date = db.Column(db.DateTime)
 
-    comments = db.relationship('Comment', backref='destination')
+    comments = db.relationship('Comment', backref='Concert')
 	
     def __repr__(self):
         return "<Name: {}>".format(self.name)
