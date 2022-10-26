@@ -14,7 +14,7 @@ def show(id):
     concert = Concert.query.filter_by(id=id).first()
     # create the comment form
     cform = CommentForm() 
-    return render_template('concerts/show.html')
+    return render_template('concerts/show.html', concert=concert)
 
 @bp.route('/create', methods = ['GET', 'POST'])
 @login_required
