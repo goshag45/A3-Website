@@ -8,7 +8,8 @@ from flask_login import login_required, current_user
 import os
 
 bp = Blueprint('concert', __name__, url_prefix='/concerts')
-@bp.route('/concert')
+
+@bp.route('/<id>')
 def show(id):
     concert = Concert.query.filter_by(id=id).first()
     # create the comment form
