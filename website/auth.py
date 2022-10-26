@@ -19,7 +19,7 @@ def login():
         #get the username and password from the database
         user_name = login_form.user_name.data
         password = login_form.password.data
-        u1 = User.query.filter_by(name=user_name).first()
+        u1 = user.query.filter_by(name=user_name).first()
         #if there is no user with that name
         if u1 is None:
             error='Incorrect user name'
