@@ -31,7 +31,7 @@ class Comment(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.now())
 
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    destination_id = db.Column(db.Integer, db.ForeignKey('destinations.id'))
+    concert_id = db.Column(db.Integer, db.ForeignKey('concerts.id'))
 
     def __repr__(self):
         return "<Comment: {}>".format(self.text)
