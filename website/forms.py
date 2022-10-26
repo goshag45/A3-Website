@@ -1,7 +1,20 @@
 from flask_wtf import FlaskForm
 from wtforms.fields import TextAreaField,SubmitField, StringField, PasswordField
 from wtforms.validators import InputRequired, Length, Email, EqualTo
+from flask_wtf.file import FileRequired, FileField, FileAllowed 
 
+ALLOWED_FILE = {'PNG', 'JPG', 'png', 'jpg'}
+
+#Create new concert
+class ConcertForm(FlaskForm):
+  name = StringField('Name', validators=[InputRequired()])
+  description = TextAreaField('Description', 
+            validators=[InputRequired()])
+  image = FileField('Destination Image', validators=[
+    FileRequired(message='Image cannot be empty'),
+    FileAllowed(ALLOWED_FILE, message='Only supports png,jpg,JPG,PNG')])
+  date = StringField('Date', validators=[InputRequired()])
+  submit = SubmitField("Create")
 
 #creates the login information
 class LoginForm(FlaskForm):
@@ -20,3 +33,8 @@ class RegisterForm(FlaskForm):
 
     #submit button
     submit = SubmitField("Register")
+
+#User comment
+class CommentForm(FlaskForm):
+  text = TextAreaField('Comment', [InputRequired()])
+  submit = SubmitField('Create')
