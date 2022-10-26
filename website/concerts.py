@@ -4,7 +4,6 @@ from flask_login import login_required, current_user
 import os
 
 bp = Blueprint('concert', __name__)
-
 @bp.route('/concert')
 def details():
     return render_template('concerts/show.html')
