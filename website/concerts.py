@@ -35,25 +35,6 @@ def create():
     return redirect(url_for('concert.create'))
   return render_template('concerts/create.html', form=form)
 
-@bp.route('/create', methods = ['GET', 'POST'])
-@login_required
-def create():
-  print('Method type: ', request.method)
-  form = ConcertForm()
-  if form.validate_on_submit():
-    #call the function that checks and returns image
-    db_file_path=check_upload_file(form)
-    concert=Concert(name=form.name.data,description=form.description.data, 
-    image=db_file_path,currency=form.currency.data)
-    # add the object to the db session
-    db.session.add(concert)
-    # commit to the database
-    db.session.commit()
-    print('Successfully created new travel concert', 'success')
-    #Always end with redirect when form is valid
-    return redirect(url_for('concert.create'))
-  return render_template('concerts/create.html', form=form)
-
 def check_upload_file(form):
   #get file data from form  
   fp=form.image.data

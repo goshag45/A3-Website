@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% import "bootstrap/form.html" as wtf %}
 
-{% block header %}
+{% block content %}
 <div class="container mt-3">
   <div class="row">
     <div class="col mt-2 mb-3">
@@ -115,6 +115,10 @@
     <!--Comment Section-->
     <section>
       <div class="container py-3 text-dark">
+      
+      <!--I dont know if it should be '/concerts/{0}/comment' or /concert/{0}/comment-->
+      {{wtf.render_form(form,"/concerts/{0}/comment".format(concert.id))}} 
+      {% for comment in concert.comments %}
         <div class="row d-flex justify-content-center">
           <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="d-flex flex-start mb-4">
@@ -127,9 +131,10 @@
                     <h5>{{users.name}}</h5>
                     <p class="small">{{users.created_at}}</p>
                     <p>
-                      {{users.text}}
+                      {{comments.text}}
                     </p>
                   </div>
+                  {% endfor %} 
                 </div>
               </div>
             </div>
