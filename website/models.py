@@ -15,9 +15,14 @@ class Concert(db.Model):
     __tablename__ = 'concerts'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80))
+    genre = db.Column(db.String(80))
+    date = db.Column(db.DateTime)
+    time = db.Column(db.DateTime)
+    address = db.Column(db.DateTime)
+    city = db.Column(db.DateTime)
     description = db.Column(db.String(200))
     image = db.Column(db.String(400))
-    date = db.Column(db.DateTime)
+    
 
     comments = db.relationship('Comment', backref='concert')
 	
