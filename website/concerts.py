@@ -8,12 +8,40 @@ from flask_login import login_required, current_user
 import os
 
 bp = Blueprint('concert', __name__, url_prefix='/concerts')
+<<<<<<< HEAD
 @bp.route('/concert')
+=======
+
+@bp.route('/<id>')
+>>>>>>> 7de657d718253fc81e230aea724242c8dc091f5b
 def show(id):
     concert = Concert.query.filter_by(id=id).first()
     # create the comment form
     cform = CommentForm() 
+<<<<<<< HEAD
     return render_template('concerts/show.html')
+=======
+    return render_template('concerts/show.html', concert=concert)
+
+@bp.route('/create', methods = ['GET', 'POST'])
+@login_required
+def create():
+  print('Method type: ', request.method)
+  form = ConcertForm()
+  if form.validate_on_submit():
+    #call the function that checks and returns image
+    db_file_path=check_upload_file(form)
+    concert=Concert(name=form.name.data,description=form.description.data, 
+    image=db_file_path,currency=form.currency.data)
+    # add the object to the db session
+    db.session.add(concert)
+    # commit to the database
+    db.session.commit()
+    print('Successfully created new travel concert', 'success')
+    #Always end with redirect when form is valid
+    return redirect(url_for('concert.create'))
+  return render_template('concerts/create.html', form=form)
+>>>>>>> 7de657d718253fc81e230aea724242c8dc091f5b
 
 @bp.route('/create', methods = ['GET', 'POST'])
 @login_required

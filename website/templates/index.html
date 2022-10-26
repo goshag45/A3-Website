@@ -91,7 +91,7 @@
     <hr class="my-6">
   </div>
 
-
+ {% for concert in concerts %}
   <!--Create event 1 -->
   <div class="row">
     <div class="col-lg-3 col-md-3 col-sm-6">
@@ -100,14 +100,18 @@
         <div class="card-body">
           <h5 class="card-title">Maxine L</h5>
           <p class="card-text">Explore the upcoming </p>
+<<<<<<< HEAD
           <a href="{{url_for('concert.show')}}" class="btn more-details">More Details</a>
+=======
+          <a href="{{url_for('concert.show', id=concert.id)}}" class="btn more-details">More Details</a>
+>>>>>>> 7de657d718253fc81e230aea724242c8dc091f5b
         </div>
         <div class="card-footer">
           <small class="text-muted">Status:<span style="color:green"> Open</span></small>
         </div>
       </div>
     </div>
-
+  {% endfor %}
     <div class="row">
       <div class="jumbotron col-md-12 mt-3">
         <h1 class="display-7">Most Popular Events</h1>

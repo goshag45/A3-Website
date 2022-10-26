@@ -1,4 +1,3 @@
-#import flask - from the package import class
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
@@ -48,4 +47,4 @@ def create_app():
 
 @app.errorhandler(404) 
 def not_found(e): 
-   return render_template("error.html")
+   return render_template("404.html"), 404
