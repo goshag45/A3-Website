@@ -8,19 +8,12 @@ from flask_login import login_required, current_user
 import os
 
 bp = Blueprint('concert', __name__, url_prefix='/concerts')
-<<<<<<< HEAD
-@bp.route('/concert')
-=======
 
 @bp.route('/<id>')
->>>>>>> 7de657d718253fc81e230aea724242c8dc091f5b
 def show(id):
     concert = Concert.query.filter_by(id=id).first()
     # create the comment form
     cform = CommentForm() 
-<<<<<<< HEAD
-    return render_template('concerts/show.html')
-=======
     return render_template('concerts/show.html', concert=concert)
 
 @bp.route('/create', methods = ['GET', 'POST'])
@@ -41,7 +34,6 @@ def create():
     #Always end with redirect when form is valid
     return redirect(url_for('concert.create'))
   return render_template('concerts/create.html', form=form)
->>>>>>> 7de657d718253fc81e230aea724242c8dc091f5b
 
 @bp.route('/create', methods = ['GET', 'POST'])
 @login_required

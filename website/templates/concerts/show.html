@@ -170,13 +170,8 @@
                   <div class="w-100">
                     <h5>Leave a comment!</h5> -->
 
-<<<<<<< HEAD
-                    <!--Create empty form for comment section-->
-                    <!-- <div class="form-outline">
-=======
     <!--Create empty form for comment section-->
     <!-- <div class="form-outline">
->>>>>>> 7de657d718253fc81e230aea724242c8dc091f5b
                       <textarea class="form-control" rows="4"></textarea>
                     </div>
                     <div class="d-flex justify-content-between mt-3">
@@ -190,30 +185,6 @@
             </div>
           </div>
         </div>
-<<<<<<< HEAD
-      </div>
-    </section> -->
-    <!-- Comments -->
-    <div class="row">
-      <div class="col-md-12">
-        <h2>Comments</h1>
-      </div>
-    </div>
-
-    <div class="row border-bottom">
-      {{wtf.render_form(form,"/destinations/{0}/comment".format(destination.id))}}
-      {% for comment in destination.comments %}
-      <div class="col-md-12">
-        <b>{{comment.user.name}} <span class="ml-2 text-muted">January 2017</span></b>
-        <p>{{comment.text}}</p>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</div>
-{% endblock %}
-=======
       </div>
     </section> -->
     {% endblock %}
->>>>>>> 7de657d718253fc81e230aea724242c8dc091f5b
