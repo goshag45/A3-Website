@@ -10,7 +10,6 @@ app=Flask(__name__)
 # a web server will run this web application
 def create_app():
 
-   app=Flask(__name__)  # this is the name of the module/package that is calling this app
    app.debug=True
    app.secret_key='utroutoru'
    #set the app configuration data 
