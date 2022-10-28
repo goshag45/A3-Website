@@ -115,10 +115,10 @@
     <!--Comment Section-->
     <section>
       <div class="container py-3 text-dark">
-      
-      <!--I dont know if it should be '/concerts/{0}/comment' or /concert/{0}/comment-->
-      {{wtf.render_form(form,"/concerts/{0}/comment".format(concert.id))}} 
-      {% for comment in concert.comments %}
+
+        <!--I dont know if it should be '/concerts/{0}/comment' or /concert/{0}/comment-->
+        {{wtf.render_form(form,"/concerts/{0}/comment".format(concert.id))}}
+        {% for comment in concert.comments %}
         <div class="row d-flex justify-content-center">
           <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="d-flex flex-start mb-4">
@@ -134,13 +134,12 @@
                       {{comments.text}}
                     </p>
                   </div>
-                  {% endfor %} 
+                  {% endfor %}
                 </div>
               </div>
             </div>
           </div>
         </div>
-
     </section>
 
     <!--Leave a comment box-->
@@ -173,4 +172,7 @@
         </div>
       </div>
     </section> -->
-    {% endblock %}
+  </div>
+</div>
+</div>
+{% endblock %}
