@@ -59,10 +59,8 @@ def comment(concert):
       comment = Comment(text=form.text.data,  
                         destination=concert_obj,
                         user=current_user) 
-
       db.session.add(comment) 
       db.session.commit() 
-
       #flashing a message which needs to be handled by the html
       #flash('Your comment has been added', 'success')  
       print('Your comment has been added', 'success') 
