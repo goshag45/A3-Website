@@ -3,9 +3,6 @@ from .forms import LoginForm, RegisterForm
 #new imports:
 from flask_login import login_user, login_required, logout_user
 from werkzeug.security import generate_password_hash,check_password_hash
-#from .models import User
-from .forms import LoginForm,RegisterForm
-from flask_login import login_user, login_required,logout_user
 from . import db
 from .models import User
 
@@ -65,4 +62,5 @@ def login():
 @login_required
 def logout():
     logout_user()
-    return 'You have been logged out'
+    flash('You have been logged out')
+    return render_template('index.html')
