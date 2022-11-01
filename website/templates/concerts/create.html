@@ -50,13 +50,17 @@
       <div class="row">
         <!--Date selector-->
         <div class="col-lg-3 col-md-4 col-sm-4">
-          <div class="input-group date" id="datepicker">
-            <input id="startDate" class="form-control dateform" type="date" placeholder="Date"/>
-          </div>
+          {{form.date(
+            class="form-control",
+            type="date",
+            )}}
         </div>
-
+        <!--Time selector-->
         <div class="col-lg-3 col-md-4 col-sm-4">
-          <input type="time" class="form-control" id="appt" name="appt">
+          {{form.time(
+            class="form-control",
+            type="time",
+            )}}
         </div>
       </div>
 
@@ -91,9 +95,9 @@
       <div class="form-group">
         <div class="col-lg-8 col-md-8 col-sm-10">
           {{form.description(
-            class="form-control",
-            placeholder="Tell us about yourself or what you're performing"
-            )}}
+          class="form-control",
+          placeholder="Tell us about yourself or what you're performing"
+          )}}
         </div>
       </div>
 
@@ -114,7 +118,7 @@
 
     <div class="col-lg-3 col-md-3 col-sm-6 mt-4 mb-5">
       {{form.submit(
-        class="btn btn-danger wrn-btn",
+      class="btn btn-danger wrn-btn",
       )}}
     </div>
   </div>
