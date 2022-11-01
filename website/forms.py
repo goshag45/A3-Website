@@ -13,8 +13,8 @@ class ConcertForm(FlaskForm):
   image = FileField('Destination Image', validators=[
     FileRequired(message='Image cannot be empty'),
     FileAllowed(ALLOWED_FILE, message='Only supports png,jpg,JPG,PNG')])
-  date = DateField('Date', validators=[InputRequired()])
-  time = TimeField('Time', validators=[InputRequired()])
+  date = DateField('Date', format="%Y-%m-%d", validators=[InputRequired("Missing Date Input")])
+  time = TimeField('Time', format="%H:%M",  validators=[InputRequired("Missing Time Input")])
   address = StringField('Address', validators=[InputRequired()])
   submit = SubmitField("Create Event")
 

@@ -51,19 +51,12 @@
         <!--Date selector-->
         <div class="col-lg-3 col-md-4 col-sm-4">
           <div class="input-group date" id="datepicker">
-            <div class="input-group-append">
-              <div class="input-group-text bg-white" style="border-radius:0px;">
-                <div class="date-select">
-                  <i class="fa fa-calendar"></i>
-                </div>
-              </div>
-            </div>
-            <input type="text" class="form-control" placeholder="Select Date">
+            <input id="startDate" class="form-control dateform" type="date" placeholder="Date"/>
           </div>
         </div>
 
         <div class="col-lg-3 col-md-4 col-sm-4">
-          <input class="form-control" type="text" id="datetime" placeholder="Time" />
+          <input type="time" class="form-control" id="appt" name="appt">
         </div>
       </div>
 
@@ -97,7 +90,7 @@
 
       <div class="form-group">
         <div class="col-lg-8 col-md-8 col-sm-10">
-          {{form.address(
+          {{form.description(
             class="form-control",
             placeholder="Tell us about yourself or what you're performing"
             )}}
