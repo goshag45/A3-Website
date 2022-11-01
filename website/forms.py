@@ -15,7 +15,7 @@ class ConcertForm(FlaskForm):
     FileAllowed(ALLOWED_FILE, message='Only supports png,jpg,JPG,PNG')])
   datetime = StringField('Date', validators=[InputRequired()])
   address = StringField('Address', validators=[InputRequired()])
-  submit = SubmitField("Create")
+  submit = SubmitField("Create Event")
 
 #creates the login information
 class LoginForm(FlaskForm):

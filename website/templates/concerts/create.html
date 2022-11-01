@@ -97,6 +97,10 @@
 
       <div class="form-group">
         <div class="col-lg-8 col-md-8 col-sm-10">
+          {{form.address(
+            class="form-control",
+            placeholder="Tell us about yourself or what you're performing"
+            )}}
           <textarea class="form-desc" placeholder="Tell us about yourself or what you're performing"
             rows="5"></textarea>
         </div>
@@ -118,9 +122,9 @@
     </form>
 
     <div class="col-lg-3 col-md-3 col-sm-6 mt-4 mb-5">
-      <a type="button" class="btn btn-danger wrn-btn">
-        Create Event
-      </a>
+      {{form.submit(
+        class="btn btn-danger wrn-btn",
+      )}}
     </div>
   </div>
 
