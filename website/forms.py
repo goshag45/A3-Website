@@ -13,7 +13,8 @@ class ConcertForm(FlaskForm):
   image = FileField('Destination Image', validators=[
     FileRequired(message='Image cannot be empty'),
     FileAllowed(ALLOWED_FILE, message='Only supports png,jpg,JPG,PNG')])
-  date = StringField('Date', validators=[InputRequired()])
+  datetime = StringField('Date', validators=[InputRequired()])
+  address = StringField('Address', validators=[InputRequired()])
   submit = SubmitField("Create")
 
 #creates the login information
