@@ -76,5 +76,3 @@ def comment(id):
       #flash('Your comment has been added', 'success')  
       print('Your comment has been added', 'success') 
     return redirect(url_for('concert.show', id=id))
-
-    
