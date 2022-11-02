@@ -94,10 +94,9 @@
 
  {% for concert in concerts %}
   <!--Create event 1 -->
-  <div class="row">
     <div class="col-lg-3 col-md-3 col-sm-6">
       <div class="card mb-3">
-        <img src="{{concert.image}}" class="card-img-top" alt="...">
+        <img src={{concert.image}} class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{concert.name}}</h5>
           <p class="card-text">{{concert.description}} </p>
@@ -109,6 +108,8 @@
       </div>
     </div>
   {% endfor %}
+
+
     <div class="row">
       <div class="jumbotron col-md-12 mt-3">
         <h1 class="display-7">Most Popular Events</h1>
