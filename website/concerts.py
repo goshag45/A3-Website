@@ -1,3 +1,4 @@
+from datetime import datetime
 from flask import Blueprint, render_template, request, redirect, url_for
 from .models import Concert, Comment
 from .forms import ConcertForm, CommentForm
@@ -24,8 +25,15 @@ def create():
   if form.validate_on_submit():
     #call the function that checks and returns image
     db_file_path=check_upload_file(form)
-    concert=Concert(name=form.name.data,description=form.description.data, 
-    image=db_file_path)
+    concert=Concert(
+    name=form.name.data,
+    description=form.description.data, 
+    genre=form.genre.data,
+    image=db_file_path,
+    datetime=form.datetime.data,
+    address=form.address.data,
+    city=form.city.data 
+    )
     # add the object to the db session
     db.session.add(concert)
     # commit to the database
