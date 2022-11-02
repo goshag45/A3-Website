@@ -14,8 +14,8 @@ bp = Blueprint('concert', __name__, url_prefix='/concerts')
 def show(id):
     concert = Concert.query.filter_by(id=id).first()
     # create the comment form
-    cform = CommentForm() 
-    return render_template('concerts/show.html', concert=concert)
+    cmtform = CommentForm() 
+    return render_template('concerts/show.html', form=cmtform, concert=concert, id=id)
 
 @bp.route('/create', methods = ['GET', 'POST'])
 @login_required
@@ -58,20 +58,22 @@ def check_upload_file(form):
   fp.save(upload_path)
   return db_upload_path
 
-@bp.route('/<concert>/comment', methods = ['GET', 'POST'])  
+@bp.route('/<id>/comment', methods = ['GET', 'POST'])  
 @login_required
-def comment(concert):  
-    form = CommentForm()  
-    concert_obj = Concert.query.filter_by(id=concert).first()  
-    if form.validate_on_submit():  
+# changing comment(concert) to comment(id) for testing
+def comment(id):  
+    cmtform = CommentForm()  
+    concert_obj = Concert.query.filter_by(id=id).first()  
+    if cmtform.validate_on_submit():  
       #read the comment from the form
-      comment = Comment(text=form.text.data,  
-                        destination=concert_obj,
+      #print("We got a comment: " + cmtform.text.data)
+      comment = Comment(text=cmtform.text.data,  
+                        concert=concert_obj,
                         user=current_user) 
       db.session.add(comment) 
       db.session.commit() 
       #flashing a message which needs to be handled by the html
       #flash('Your comment has been added', 'success')  
       print('Your comment has been added', 'success') 
-    return redirect(url_for('concert.show', id=concert))
+    return redirect(url_for('concert.show', id=id))
     
