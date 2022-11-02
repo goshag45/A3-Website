@@ -14,26 +14,26 @@ bp = Blueprint('concert', __name__, url_prefix='/concerts')
 def show(id):
     concert = Concert.query.filter_by(id=id).first()
     # create the comment form
-    cform = CommentForm() 
-    return render_template('concerts/show.html', concert=concert)
+    cmtform = CommentForm() 
+    return render_template('concerts/show.html', cmtform = cmtform, concert=concert, id=id)
 
 @bp.route('/create', methods = ['GET', 'POST'])
 @login_required
 def create():
   print('Method type: ', request.method)
-  form = ConcertForm()
-  if form.validate_on_submit():
+  cmtform = ConcertForm()
+  if cmtform.validate_on_submit():
     print('FORM IS VALID')
     #call the function that checks and returns image
-    db_file_path=check_upload_file(form)
+    db_file_path=check_upload_file(cmtform)
     concert=Concert(
-    name=form.name.data,
-    description=form.description.data, 
-    genre=form.genre.data,
+    name=cmtform.name.data,
+    description=cmtform.description.data, 
+    genre=cmtform.genre.data,
     image=db_file_path,
-    datetime=form.datetime.data,
-    address=form.address.data,
-    city=form.city.data 
+    datetime=cmtform.datetime.data,
+    address=cmtform.address.data,
+    city=cmtform.city.data 
     )
     # add the object to the db session
     db.session.add(concert)
@@ -42,7 +42,7 @@ def create():
     print('Successfully created new concert', 'success')
     #Always end with redirect when form is valid
     return redirect(url_for('concert.create'))
-  return render_template('concerts/create.html', form=form)
+  return render_template('concerts/create.html', form=cmtform)
 
 def check_upload_file(form):
   #get file data from form  
