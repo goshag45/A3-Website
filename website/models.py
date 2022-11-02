@@ -19,6 +19,7 @@ class Concert(db.Model):
     address = db.Column(db.String(80))
     city = db.Column(db.String(80))
     description = db.Column(db.String(200))
+    tickets = db.Column(db.Integer)
     image = db.Column(db.String(400))
     comments = db.relationship('Comment', backref='concert')
     def __repr__(self):

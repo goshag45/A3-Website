@@ -111,7 +111,42 @@
       <hr class="my-6">
     </div>
 
-    
+    <!--Leave a comment box-->
+    <div class="row border-bottom"> 
+      {{wtf.render_form(form,"/concerts/{0}/comment".format(concert.id))}}
+      {% for comment in concert.comments %}
+      <div class="col-md-12">  
+        <b>{{comment.user.name}} <span class="ml-2 text-muted">January 2017</span></b>
+        <p>{{comment.text}}</p>  
+      </div> 
+      {% endfor %} 
+    </div>  
+    <section>
+      <div class="container my-5 py-5 text-dark">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-10 col-md-10 col-sm-12 ">
+            <div class="card">
+              <div class="card-body p-4">
+                <div class="d-flex flex-start w-100">
+                  <div class="w-100">
+                    <h5>Leave a comment!</h5> -->
+                    Create empty form for comment section
+                    <div class="form-outline">
+                      <textarea class="form-control" rows="4"></textarea>
+                    </div>
+                    <div class="d-flex justify-content-between mt-3">
+                      <button type="button" class="btn btn-danger">
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
   </div>
 </div>

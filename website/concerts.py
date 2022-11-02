@@ -14,7 +14,7 @@ bp = Blueprint('concert', __name__, url_prefix='/concerts')
 def show(id):
     concert = Concert.query.filter_by(id=id).first()
     # create the comment form
-    cform = CommentForm() 
+    form = CommentForm() 
     return render_template('concerts/show.html', concert=concert)
 
 @bp.route('/create', methods = ['GET', 'POST'])
