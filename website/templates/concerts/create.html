@@ -104,13 +104,12 @@
           <input class="form-file" type="file">
         </div>
       </div>
+      <div class="col-lg-3 col-md-3 col-sm-6 mt-4 mb-5">
+        {{form.submit(
+        class="btn btn-danger wrn-btn",
+        )}}
+      </div>
     </form>
-
-    <div class="col-lg-3 col-md-3 col-sm-6 mt-4 mb-5">
-      {{form.submit(
-      class="btn btn-danger wrn-btn",
-      )}}
-    </div>
   </div>
 
   {% endblock %}
