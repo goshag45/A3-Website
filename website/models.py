@@ -8,6 +8,8 @@ class User(db.Model, UserMixin):
     name = db.Column(db.String(100), index=True, unique=True, nullable=False)
     emailid = db.Column(db.String(100), index=True, nullable=False)
     password_hash = db.Column(db.String(255), nullable=False)
+    phone = db.Column(db.String(12), index=True, unique=True, nullable=False)
+    address = db.Column(db.String(100), index=True, unique=True, nullable=False)
     comments = db.relationship('Comment', backref='user')
 
 class Concert(db.Model):
@@ -19,6 +21,7 @@ class Concert(db.Model):
     address = db.Column(db.String(80))
     city = db.Column(db.String(80))
     description = db.Column(db.String(200))
+    tickets = db.Column(db.Integer)
     image = db.Column(db.String(400))
     comments = db.relationship('Comment', backref='concert')
     def __repr__(self):
