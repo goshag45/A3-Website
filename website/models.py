@@ -17,7 +17,7 @@ class Concert(db.Model):
     genre = db.Column(db.String(80))
     datetime = db.Column(db.DateTime)
     address = db.Column(db.String(80))
-    city = db.Column(db.DateTime)
+    city = db.Column(db.String(80))
     description = db.Column(db.String(200))
     image = db.Column(db.String(400))
     comments = db.relationship('Comment', backref='concert')

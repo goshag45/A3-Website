@@ -1,115 +1,37 @@
 {% extends 'base.html' %}
 
 {% import "bootstrap/form.html" as wtf %}
-
 {% block header %}
+
 <!-- test form-->
-<!-- {{wtf.render_form(form)}} -->
+
 <div class="container mt-3">
   <div class="row">
     <div class="col mt-2 mb-3">
       <img src="/static/img/create event.png" class="d-block w-100" alt="...">
     </div>
   </div>
-
-
   <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12">
-      <div class="jumbotron">
-        <h1 class="step-num"><span style="color:burlywood">Step 1</span></h1>
-        <p>Enter artist name and select genre</p>
-        <hr class="my-6">
-      </div>
-    </div>
 
-    <form  action="{{url_for('concert.create')}}" method="POST" enctype="multipart/form-data">
-      <div class="form-group">
-        <div class="col-lg-6 col-md-8 col-sm-8 mb-3">
-          <!-- Just a test here -->
-          {{form.name(
-          class="form-control",
-          placeholder="E.g. NIKI"
-          )}}
-        </div>
-      </div>
+    <form class="form" method="POST" enctype=multipart/form-data>
+      {{form.csrf_token}}
+      <div class="col-md-6 col-lg-4 etc">{{form.name(class="form-control or col-md-6 col-lg-4", placeholder="E.g.
+        NIKI")}}</div>
 
-      <div class="col-lg-3 col-md-3 col-sm-6 p-0">
-        {{form.hidden_tag()}}
-        <p>
-          {{form.genre(class="form-control")}}
-        </p>
-      </div>
+      <div>{{form.genre(class="form-control")}}</div>
 
-      <div class="col-lg-12 col-md-12 col-sm-12 mt-5">
-        <div class="jumbotron">
-          <h1 class="step-num"><span style="color:burlywood">Step 2:</span></h1>
-          <p>Select date, time and location</p>
-          <hr class="my-6">
-        </div>
-      </div>
+      <div>{{form.datetime(class="form-control")}}</div>
 
-      <div class="row">
-        <!--Date selector-->
-        <div class="col-lg-3 col-md-4 col-sm-4">
-          {{form.datetime(
-            class="form-control",
-            type="datetime-local",
-            )}}
-        </div>
-      </div>
+      <div>{{form.address(class="form-control", placeholder="E.g. 21 Kirby Avenue, West End")}}</div>
 
-      <div class="form-group">
-        <div class="col-lg-6 col-md-8 col-sm-8 mt-3">
-          {{form.address(
-          class="form-control",
-          placeholder="E.g. 21 Kirby Avenue, West End"
-          )}}
-        </div>
-      </div>
+      <div>{{form.city(class="form-control")}}</div>
 
-      <div class="col-lg-3 col-md-3 col-sm-6 mt-3">
-        {{form.hidden_tag()}}
-        <p>
-          {{form.city(class="form-control")}}
-        </p>
-      </div>
+      <div>{{form.description(class="form-control", placeholder="Tell us about yourself or what you're performing")}}</div>
 
-      <div class="col-lg-12 col-md-12 col-sm-12 mt-5">
-        <div class="jumbotron">
-          <h1 class="step-num"><span style="color:burlywood">Step 3:</span></h1>
-          <p>Write a description</p>
-          <hr class="my-6">
-        </div>
-      </div>
+      <div>{{form.image(class="form-control")}}</div>
 
-      <div class="form-group">
-        <div class="col-lg-8 col-md-8 col-sm-10">
-          {{form.description(
-          class="form-control",
-          placeholder="Tell us about yourself or what you're performing"
-          )}}
-        </div>
-      </div>
-
-      <div class="col-lg-12 col-md-12 col-sm-12 mt-5">
-        <div class="jumbotron">
-          <h1 class="step-num"><span style="color:burlywood">Step 4:</span></h1>
-          <p>Upload event picture</p>
-          <hr class="my-6">
-        </div>
-      </div>
-
-      <div class="mb-3">
-        <div class="col-lg-4 col-md-6 col-sm-6">
-          <input class="form-file" type="file">
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 mt-4 mb-5">
-        {{form.submit(
-        class="btn btn-danger wrn-btn",
-        )}}
-      </div>
+      <div>{{form.submit(class="btn btn-danger wrn-btn")}}</div>
     </form>
   </div>
-
-  {% endblock %}
+</div>
+{% endblock %}
