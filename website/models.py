@@ -8,6 +8,8 @@ class User(db.Model, UserMixin):
     name = db.Column(db.String(100), index=True, unique=True, nullable=False)
     emailid = db.Column(db.String(100), index=True, nullable=False)
     password_hash = db.Column(db.String(255), nullable=False)
+    phone = db.Column(db.String(12), index=True, unique=True, nullable=False)
+    address = db.Column(db.String(100), index=True, unique=True, nullable=False)
     comments = db.relationship('Comment', backref='user')
 
 class Concert(db.Model):
