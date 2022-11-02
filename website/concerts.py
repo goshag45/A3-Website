@@ -22,7 +22,9 @@ def show(id):
 def create():
   print('Method type: ', request.method)
   form = ConcertForm()
+  print('CREATE IS CALLED')
   if form.validate_on_submit():
+    print('FORM IS VALID')
     #call the function that checks and returns image
     db_file_path=check_upload_file(form)
     concert=Concert(
@@ -38,7 +40,7 @@ def create():
     db.session.add(concert)
     # commit to the database
     db.session.commit()
-    print('Successfully created new travel concert', 'success')
+    print('Successfully created new concert', 'success')
     #Always end with redirect when form is valid
     return redirect(url_for('concert.create'))
   return render_template('concerts/create.html', form=form)
