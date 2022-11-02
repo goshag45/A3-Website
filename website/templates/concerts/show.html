@@ -19,7 +19,7 @@
       <div class="jumbotron">
         <h3>Artist: <strong>{{concert.name}}</strong></h3>
         <hr class="my-6">
-        <h3>Date: <strong>{{concert.date}}, {{concert.time}}</strong></h3>
+        <h3>Date: <strong>{{concert.datetime.strftime('%B %d, %Y @ %I:%M%p')}}</strong></h3>
         <hr class="my-6">
         <h3>Location: <strong>{{concert.address}}</strong></h3>
         <hr class="my-6">
@@ -111,36 +111,8 @@
       <hr class="my-6">
     </div>
 
-    <!--Leave a comment box-->
-    <!-- <section>
-      <div class="container my-5 py-5 text-dark">
-        <div class="row d-flex justify-content-center">
-          <div class="col-lg-10 col-md-10 col-sm-12 ">
-            <div class="card">
-              <div class="card-body p-4">
-                <div class="d-flex flex-start w-100">
-                  <img class="rounded-circle shadow-1-strong me-3" src="img/pfp.PNG" alt="avatar" width="65"
-                    height="65" />
-                  <div class="w-100">
-                    <h5>Leave a comment!</h5> -->
+    
 
-    <!--Create empty form for comment section-->
-    <!-- <div class="form-outline">
-                      <textarea class="form-control" rows="4"></textarea>
-                    </div>
-                    <div class="d-flex justify-content-between mt-3">
-                      <button type="button" class="btn btn-danger">
-                        Submit
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
   </div>
 </div>
 </div>
