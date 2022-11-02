@@ -66,7 +66,7 @@ def comment(concert):
     if form.validate_on_submit():  
       #read the comment from the form
       comment = Comment(text=form.text.data,  
-                        destination=concert_obj,
+                        concert=concert_obj,
                         user=current_user) 
       db.session.add(comment) 
       db.session.commit() 
@@ -74,4 +74,12 @@ def comment(concert):
       #flash('Your comment has been added', 'success')  
       print('Your comment has been added', 'success') 
     return redirect(url_for('concert.show', id=concert))
+
+
+
+
+
+
+   
+
     

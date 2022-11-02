@@ -38,6 +38,8 @@ class RegisterForm(FlaskForm):
     password=PasswordField("Password", validators=[InputRequired(),
                   EqualTo('confirm', message="Passwords should match")])
     confirm = PasswordField("Confirm Password")
+    phone = StringField('Phone', validators=[InputRequired()])
+    address = StringField('Address', validators=[InputRequired()])
     #submit button
     submit = SubmitField("Register")
 
