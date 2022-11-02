@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms.fields import TextAreaField,SubmitField, StringField, PasswordField, DateField, TimeField, SelectField
+from wtforms.fields import TextAreaField,SubmitField, StringField, PasswordField, DateTimeLocalField , SelectField
 from wtforms.validators import InputRequired, Length, Email, EqualTo
 from flask_wtf.file import FileRequired, FileField, FileAllowed 
 
@@ -15,12 +15,11 @@ class ConcertForm(FlaskForm):
   image = FileField('Destination Image', validators=[
     FileRequired(message='Image cannot be empty'),
     FileAllowed(ALLOWED_FILE, message='Only supports png,jpg,JPG,PNG')])
-  date = DateField('Date', format="%Y-%m-%d", validators=[InputRequired("Missing Date Input")])
-  time = TimeField('Time', format="%H:%M",  validators=[InputRequired("Missing Time Input")])
+  datetime = DateTimeLocalField('Date', format='%Y-%m-%dT%H:%M', validators=[InputRequired("Missing Date or Time")])
   address = StringField('Address', validators=[InputRequired()])
   cityChoices = "Brisbane", "Sydney", "Melbourne", "Adelaide", "Perth"
   city = SelectField(u'Field name', choices = cityChoices, validators = [InputRequired()])
-  submit = SubmitField("Create Event")
+  submit = SubmitField("Create")
 
 #creates the login information
 class LoginForm(FlaskForm):

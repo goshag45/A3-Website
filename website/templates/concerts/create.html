@@ -16,7 +16,7 @@
       </div>
     </div>
 
-    <form method="POST" action="/create">
+    <form  action="{{url_for('concert.create')}}" method="POST"">
       <div class="form-group">
         <div class="col-lg-6 col-md-8 col-sm-8 mb-3">
           <!-- Just a test here -->
@@ -45,16 +45,9 @@
       <div class="row">
         <!--Date selector-->
         <div class="col-lg-3 col-md-4 col-sm-4">
-          {{form.date(
+          {{form.datetime(
             class="form-control",
-            type="date",
-            )}}
-        </div>
-        <!--Time selector-->
-        <div class="col-lg-3 col-md-4 col-sm-4">
-          {{form.time(
-            class="form-control",
-            type="time",
+            type="datetime-local",
             )}}
         </div>
       </div>
