@@ -112,7 +112,9 @@
     </div>
 
     <div class="row border-bottom"> 
-      {{wtf.render_form(cmtform, "/concerts/{0}/comment".format(concert.id))}}
+      <!-- testing -->
+      {{wtf.render_form(cmtform)}}
+      <!-- {{wtf.render_form(cmtform, "/concerts/{0}".format(concert.id))}} -->
       {% for comment in concert.comments %}
       <div class="col-md-12">  
         <b>{{comment.user.name}} <span class="ml-2 text-muted">{{comment.created_at}}</span></b>
