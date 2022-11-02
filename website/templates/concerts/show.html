@@ -111,18 +111,20 @@
       <hr class="my-6">
     </div>
 
-    <div class="row border-bottom">
-      <!-- testing -->
-      <!--{{wtf.render_form(cmtform)}}-->
-      {{wtf.render_form(cmtform, "/concerts/{0}/comment".format(concert.id))}}
-      {% for comment in concert.comments %}
-      <div class="col-md-12">
-        <b>{{comment.user_id}} <span class="ml-2 text-muted">{{comment.created_at}}</span></b>
-        <p>{{comment.text}}</p>
+    <form class="form" method="POST">
+      <div class="row border-bottom"> 
+          <!-- testing -->
+          <!--{{wtf.render_form(cmtform)}}-->
+          {{wtf.render_form(cmtform, "/concerts/{0}/comment".format(concert.id))}}
+          {% for comment in concert.comments %}
+          <div class="col-md-12">  
+            <b>{{comment.user_id}}
+              <span class="ml-2 text-muted">{{comment.created_at}}</span>
+            </b>
+            <p>{{comment.text}}</p>  
+          </div> 
+          {% endfor %}
       </div>
-      {% endfor %}
-    </div>
-  </div>
-</div>
+    </form>
 
 {% endblock %}
