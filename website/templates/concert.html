@@ -2,195 +2,192 @@
 
 
 {% block content %}
-  
-    <div class="container mt-3">
-      <div class="row">
-        <div class="col mt-2 mb-3">
-          <img src="static/img/event details.png" class="d-block w-100" alt="...">
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="col mt-2 mb-3">
+      <img src="static/img/event details.png" class="d-block w-100" alt="...">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6 col-md-12 col-sm-12 mt-2 mb-3">
+      <img src="img/maxine.jpg" class="d-block w-100" alt="...">
+    </div>
+
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <div class="jumbotron">
+        <h3>Artist: <strong>Maxine L</strong></h3>
+        <hr class="my-6">
+        <h3>Date: <strong>15 Oct, 2022 at 5pm</strong></h3>
+        <hr class="my-6">
+        <h3>Location: <strong>SOKO Waterfront Apartment rooftop</strong></h3>
+        <hr class="my-6">
+        <h3>Status: <strong><span style="color:green">Open</span></strong></h3>
+        <hr class="my-6">
+        <h3 class="display-7">Description:</h3>
+        <p>Hi everyone! I'm Maxine and I'm a brisbane-based indie singer located in West End.
+          I perform every month on a Saturday evening and play many renditions of classics on my guitar.
+          Come along to vibe to some music and bring along food and drinks! Space is limited so make
+          sure you get a ticket!
+        </p>
+        <hr class="my-6">
+        <h3 class="display-7">Contact Details:</h3>
+
+        <!-- Section: Social -->
+        <div class="social">
+          <div class="container text-center">
+            <a href="https://www.instagram.com/kirbochii/?hl=en"><i class="fa fa-phone"></i></a>
+            <a href="https://www.instagram.com/kirbochii/?hl=en"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.instagram.com/kirbochii/?hl=en"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.instagram.com/kirbochii/?hl=en"><i class="fa fa-google-plus"></i></a>
+          </div>
         </div>
       </div>
+    </div>
 
-      <div class="row">
-        <div class="col-lg-6 col-md-12 col-sm-12 mt-2 mb-3">
-          <img src="img/maxine.jpg" class="d-block w-100" alt="...">
-        </div>
-
-        <div class="col-lg-6 col-md-12 col-sm-12">
-          <div class="jumbotron">
-            <h3>Artist: <strong>Maxine L</strong></h3>
-            <hr class="my-6">
-            <h3>Date: <strong>15 Oct, 2022 at 5pm</strong></h3>
-            <hr class="my-6">
-            <h3>Location: <strong>SOKO Waterfront Apartment rooftop</strong></h3>
-            <hr class="my-6">
-            <h3>Status: <strong><span style="color:green">Open</span></strong></h3>
-            <hr class="my-6">
-            <h3 class="display-7">Description:</h3>
-            <p>Hi everyone! I'm Maxine and I'm a brisbane-based indie singer located in West End.
-              I perform every month on a Saturday evening and play many renditions of classics on my guitar.
-              Come along to vibe to some music and bring along food and drinks! Space is limited so make
-              sure you get a ticket!
-            </p>
-            <hr class="my-6">
-            <h3 class="display-7">Contact Details:</h3>
-
-            <!-- Section: Social -->
-            <div class="social">
-              <div class="container text-center">
-                <a href="https://www.instagram.com/kirbochii/?hl=en"><i class="fa fa-phone"></i></a>
-                <a href="https://www.instagram.com/kirbochii/?hl=en"><i class="fa fa-facebook"></i></a>
-                <a href="https://www.instagram.com/kirbochii/?hl=en"><i class="fa fa-instagram"></i></a>
-                <a href="https://www.instagram.com/kirbochii/?hl=en"><i class="fa fa-google-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!--Select ticket section-->
-        <div class="jumbotron">
-          <h1 class="ticket">Select Ticket Quantity</h1>
-          <hr class="my-6">
-        </div>
+    <!--Select ticket section-->
+    <div class="jumbotron">
+      <h1 class="ticket">Select Ticket Quantity</h1>
+      <hr class="my-6">
+    </div>
 
 
-        <section class="search-sec">
-          <div class="container">
-            <form action="#" method="post" novalidate="novalidate">
-              <div class="ticket-quantity">
-                <div class="col-lg-12">
-                  <div class="row">
-                    <!-- Drop down menu for city -->
-                    <div class="col-lg-3 col-md-6 col-sm-12 p-0 mb-2">
-                      <div class="ticket-dropdown">
-                        <select class="form-control">
-                          <option>Number of tickets</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <!-- Button trigger modal -->
-                    <div class="col-lg-3 col-md-3 col-sm-12">
-                      <button type="button" class="btn btn-danger wrn-btn" data-bs-toggle="modal"
-                        data-bs-target="#confirm-booking">
-                        Find Tickets
-                      </button>
-                    </div>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="confirm-booking" tabindex="-1" aria-labelledby="confirm-booking-label"
-                      aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="confirm-booking-label">Yay! There's ticket's available!</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                            <h3>Order Details</h3>
-                            <hr class="my-6">
-                            <p><strong>Event Name:</strong> Maxine L</p>
-                            <p><strong>Date:</strong> 15th Oct, 2022</p>
-                            <p><strong>Time:</strong> 5:00pm</p>
-                            <p><strong>Tickets:</strong> 2</p>
-                            <p><strong>Order ID:</strong> 016A50BAC</p>
-
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <a href=history.html type="button" class="btn btn-success">Confirm Booking</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+    <section class="search-sec">
+      <div class="container">
+        <form action="#" method="post" novalidate="novalidate">
+          <div class="ticket-quantity">
+            <div class="col-lg-12">
+              <div class="row">
+                <!-- Drop down menu for city -->
+                <div class="col-lg-3 col-md-6 col-sm-12 p-0 mb-2">
+                  <div class="ticket-dropdown">
+                    <select class="form-control">
+                      <option>Number of tickets</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
                   </div>
                 </div>
-              </div>
-          </div>
-        </section>
 
-        <div class="jumbotron">
-          <h1 class="ticket">Comment Section</h1>
-          <hr class="my-6">
-        </div>
+                <!-- Button trigger modal -->
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                  <button type="button" class="btn btn-danger wrn-btn" data-bs-toggle="modal"
+                    data-bs-target="#confirm-booking">
+                    Find Tickets
+                  </button>
+                </div>
 
-        <!--Comment Section-->
-        <section>
-          <div class="container py-3 text-dark">
-            <div class="row d-flex justify-content-center">
-              <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="d-flex flex-start mb-4">
-                  <img class="rounded-circle shadow-1-strong me-3" src="img/carman.PNG" alt="avatar" width="65"
-                    height="65" />
+                <!-- Modal -->
+                <div class="modal fade" id="confirm-booking" tabindex="-1" aria-labelledby="confirm-booking-label"
+                  aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="confirm-booking-label">Yay! There's ticket's available!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <h3>Order Details</h3>
+                        <hr class="my-6">
+                        <p><strong>Event Name:</strong> Maxine L</p>
+                        <p><strong>Date:</strong> 15th Oct, 2022</p>
+                        <p><strong>Time:</strong> 5:00pm</p>
+                        <p><strong>Tickets:</strong> 2</p>
+                        <p><strong>Order ID:</strong> 016A50BAC</p>
 
-                  <div class="card w-100">
-                    <div class="card-body p-4">
-                      <div class="">
-                        <h5>Carman W</h5>
-                        <p class="small">4:20pm on 20/9/2022</p>
-                        <p>
-                          Absolutely in love with Maxine's voice! She is also the sweetest person ever.
-                          Would definitely go to her rooftop concerts again!
-                        </p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <a href=history.html type="button" class="btn btn-success">Confirm Booking</a>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+      </div>
+    </section>
 
-            <div class="d-flex flex-start">
-              <img class="rounded-circle shadow-1-strong me-3" src="img/gorgor.PNG" alt="avatar" width="65"
+    <div class="jumbotron">
+      <h1 class="ticket">Comment Section</h1>
+      <hr class="my-6">
+    </div>
+
+    <!--Comment Section-->
+    <section>
+      <div class="container py-3 text-dark">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="d-flex flex-start mb-4">
+              <img class="rounded-circle shadow-1-strong me-3" src="img/carman.PNG" alt="avatar" width="65"
                 height="65" />
+
               <div class="card w-100">
                 <div class="card-body p-4">
                   <div class="">
-                    <h5>GorGor</h5>
-                    <p class="small">7:35pm on 17/9/2022</p>
+                    <h5>Carman W</h5>
+                    <p class="small">4:20pm on 20/9/2022</p>
                     <p>
-                      The atmosphere was amazing. Really enjoyed it :)
+                      Absolutely in love with Maxine's voice! She is also the sweetest person ever.
+                      Would definitely go to her rooftop concerts again!
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-        </section>
+          </div>
+        </div>
 
-        <!--Leave a comment box-->
-        <section>
-          <div class="container my-5 py-5 text-dark">
-            <div class="row d-flex justify-content-center">
-              <div class="col-lg-10 col-md-10 col-sm-12 ">
-                <div class="card">
-                  <div class="card-body p-4">
-                    <div class="d-flex flex-start w-100">
-                      <img class="rounded-circle shadow-1-strong me-3" src="img/pfp.PNG" alt="avatar" width="65"
-                        height="65" />
-                      <div class="w-100">
-                        <h5>Leave a comment!</h5>
+        <div class="d-flex flex-start">
+          <img class="rounded-circle shadow-1-strong me-3" src="img/gorgor.PNG" alt="avatar" width="65" height="65" />
+          <div class="card w-100">
+            <div class="card-body p-4">
+              <div class="">
+                <h5>GorGor</h5>
+                <p class="small">7:35pm on 17/9/2022</p>
+                <p>
+                  The atmosphere was amazing. Really enjoyed it :)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
 
-                        <!--Create empty form for comment section-->
-                        <div class="form-outline">
-                          <textarea class="form-control" rows="4"></textarea>
-                        </div>
-                        <div class="d-flex justify-content-between mt-3">
-                          <button type="button" class="btn btn-danger">
-                            Submit
-                          </button>
-                        </div>
-                      </div>
+    <!--Leave a comment box-->
+    <section>
+      <div class="container my-5 py-5 text-dark">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-10 col-md-10 col-sm-12 ">
+            <div class="card">
+              <div class="card-body p-4">
+                <div class="d-flex flex-start w-100">
+                  <img class="rounded-circle shadow-1-strong me-3" src="img/pfp.PNG" alt="avatar" width="65"
+                    height="65" />
+                  <div class="w-100">
+                    <h5>Leave a comment!</h5>
+
+                    <!--Create empty form for comment section-->
+                    <div class="form-outline">
+                      <textarea class="form-control" rows="4"></textarea>
+                    </div>
+                    <div class="d-flex justify-content-between mt-3">
+                      <button type="button" class="btn btn-danger">
+                        Submit
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
       </div>
-    </div>
-  
-
+    </section>
+  </div>
+</div>
 {% endblock %}
