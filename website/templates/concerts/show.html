@@ -17,16 +17,16 @@
 
     <div class="col-lg-6 col-md-12 col-sm-12">
       <div class="jumbotron">
-        <h3>Artist: <strong>{{concerts.name}}</strong></h3>
+        <h3>Artist: <strong>{{concert.name}}</strong></h3>
         <hr class="my-6">
-        <h3>Date: <strong>{{concerts.date}}, {{concerts.time}}</strong></h3>
+        <h3>Date: <strong>{{concert.date}}, {{concert.time}}</strong></h3>
         <hr class="my-6">
-        <h3>Location: <strong>{{concerts.address}}</strong></h3>
+        <h3>Location: <strong>{{concert.address}}</strong></h3>
         <hr class="my-6">
         <h3>Status: <strong><span style="color:green">Open</span></strong></h3>
         <hr class="my-6">
         <h3 class="display-7">Description:</h3>
-        <p>{{concerts.description}}</p>
+        <p>{{concert.description}}</p>
         <hr class="my-6">
         <h3 class="display-7">Contact Details:</h3>
 
@@ -88,7 +88,7 @@
                       <div class="modal-body">
                         <h3>Order Details</h3>
                         <hr class="my-6">
-                        <p><strong>Event Name:</strong> {{concerts.name}}</p>
+                        <p><strong>Event Name:</strong> {{concert.name}}</p>
                         <p><strong>Date:</strong> 15th Oct, 2022</p>
                         <p><strong>Time:</strong> 5:00pm</p>
                         <p><strong>Tickets:</strong> 2</p>
@@ -112,36 +112,6 @@
       <h1 class="ticket">Comment Section</h1>
       <hr class="my-6">
     </div>
-
-    <!--Comment Section-->
-    <section>
-      <div class="container py-3 text-dark">
-      
-      <!--I dont know if it should be '/concerts/{0}/comment' or /concert/{0}/comment-->
-      {{wtf.render_form(form,"/concerts/{0}/comment".format(concert.id))}} 
-      {% for comment in concert.comments %}
-        <div class="row d-flex justify-content-center">
-          <div class="col-lg-12 col-md-12 col-sm-12">
-            <div class="d-flex flex-start mb-4">
-              <img class="rounded-circle shadow-1-strong me-3" src="img/carman.PNG" alt="avatar" width="65"
-                height="65" />
-
-              <div class="card w-100">
-                <div class="card-body p-4">
-                  <div class="">
-                    <h5>{{users.name}}</h5>
-                    <p class="small">{{users.created_at}}</p>
-                    <p>
-                      {{comments.text}}
-                    </p>
-                  </div>
-                  {% endfor %}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </section>
 
     <!--Leave a comment box-->
     <!-- <section>
