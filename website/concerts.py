@@ -69,24 +69,30 @@ def update(id):
 		except:
 			db.session.rollback()
 			flash("Error!  Looks like there was a problem...try again!")
-			return render_template("concerts/update.html", 
+			return redirect(url_for('concert.create'), 
 				form=form,
 				name_to_update = name_to_update,
 				id=id)
 	else:
-		return render_template("concerts/update.html", 
+		return redirect(url_for('concert.create'), 
 				form=form,
 				name_to_update = name_to_update,
 				id = id)
-				
+
+# delete database records with flask: https://www.youtube.com/watch?v=7jKsHOZk-IE
 @bp.route('/delete/<id>', methods = ['GET', 'POST'])
 @login_required
 def delete(id):
-	to_be_delete = Concert.query.get(id)
-	Concert.query.filter_by(id=id).delete()
-	db.session.commit()
-	flash("The event has been successfully deleted.")
-
+	form = ConcertForm()
+	to_be_delete = Concert.query.get_or_404(id)
+	try:
+		db.session.delete(to_be_delete)
+		db.session.commit()
+		flash("The event has been successfully deleted.")
+		return redirect(url_for('concert.create'))
+	except:
+		flash("Unsuccessfully delete action.")
+		return redirect(url_for('concert.create'))
 	# if request.method == "POST":
 	# 	to_delete = Concert.query.get(id)
 
