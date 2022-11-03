@@ -3,7 +3,14 @@
 {% import "bootstrap/form.html" as wtf %}
 {% block header %}
 
-<!-- test form-->
+{% for message in get_flashed_messages() %}
+	
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">
+	  {{ message }}
+	  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+	
+{% endfor %}
 
 <div class="container mt-3">
   <div class="row">
@@ -26,13 +33,15 @@
 
       <div>{{form.city(class="form-control")}}</div>
 
-      <div>{{form.description(class="form-control", placeholder="Tell us about yourself or what you're performing")}}</div>
+      <div>{{form.description(class="form-control", placeholder="Tell us about yourself or what you're performing")}}
+      </div>
 
       <div>{{form.image(class="form-control")}}</div>
 
-      <div>{{form.tickets(class="form-control", placeholder="Please enter number of tickets to be sold (maximum 100,000)")}}</div>
-
+      <div>{{form.tickets(class="form-control", placeholder="Please enter number of tickets to be sold (maximum
+        100,000)")}}</div>
       <div>{{form.submit(class="btn btn-danger wrn-btn")}}</div>
+
     </form>
   </div>
 </div>
