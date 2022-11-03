@@ -21,28 +21,45 @@ def show(id):
 @login_required
 def create():
   print('Method type: ', request.method)
-  cmtform = ConcertForm()
-  if cmtform.validate_on_submit():
+  form = ConcertForm()
+  if form.validate_on_submit():
     print('FORM IS VALID')
     #call the function that checks and returns image
-    db_file_path=check_upload_file(cmtform)
+    db_file_path=check_upload_file(form)
     concert=Concert(
-    name=cmtform.name.data,
-    description=cmtform.description.data, 
-    genre=cmtform.genre.data,
+    name=form.name.data,
+    description=form.description.data, 
+    genre=form.genre.data,
     image=db_file_path,
-    datetime=cmtform.datetime.data,
-    address=cmtform.address.data,
-    city=cmtform.city.data 
+    datetime=form.datetime.data,
+    address=form.address.data,
+    city=form.city.data 
     )
     # add the object to the db session
     db.session.add(concert)
     # commit to the database
     db.session.commit()
     print('Successfully created new concert', 'success')
+
     #Always end with redirect when form is valid
     return redirect(url_for('concert.create'))
-  return render_template('concerts/create.html', form=cmtform)
+  return render_template('concerts/create.html', form=form)
+
+@bp.route('/update/<id>', methods = ['GET', 'POST'])
+@login_required
+
+#def modify_concert(id):
+#  # object modifier TODO
+#  form = ConcertForm():
+#  name_to_update = concert.query.get_or_404(id)
+  
+#  form = ConcertForm()
+#  if form.validate_on_submit():
+#    print('CHECKING FORM ON PROGRESS')
+#    #call the function that checks and returns image
+#    db_file_path=check_upload_file(form)
+
+#  print('Successfully modified the existibg concert', 'success')
 
 def check_upload_file(form):
   #get file data from form  

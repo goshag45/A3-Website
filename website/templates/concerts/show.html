@@ -99,11 +99,13 @@
                                         </div>
                                     </div>
                                 </div>
+                            </form> <!-- close the form tag for ticket section -->  
                                 <div class="jumbotron">
                                     <h1 class="ticket">Comment Section</h1>
                                     <hr class="my-6">
                                 </div>
                                 <div class="row border-bottom">
+                                    <form>
                                     <!-- testing -->
                                     <!--{{wtf.render_form(cmtform)}}-->
                                     {{wtf.render_form(cmtform, "/concerts/{0}/comment".format(concert.id))}}
@@ -114,18 +116,15 @@
                                         </b>
                                         <p>{{comment.text}}</p>
                                     </div>  
-                                    {% endfor %}  
-                        
+                                    {% endfor %}
+                                    </form><!-- close the form tag for comment section-->
                                 </div>   
 
                             </div>
                         </div>              
-                    </div>
-                </form>       
+                    </div>     
             </div>
         </section>   
   
-   <!--</div>--> 
-  <!--</div>--> 
 </div><!-- tag for container -->
 {% endblock %}
