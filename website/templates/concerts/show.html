@@ -1,22 +1,15 @@
 {% extends 'base.html' %}
+
 {% import "bootstrap/form.html" as wtf %}
 {% block content %}
 
 <div class="container mt-3">
-
-  <div class="row">
-    <div class="col mt-2 mb-3">
-        <img src="/static/img/event details.png" class="d-block w-100" alt="...">
-    </div>
-  </div>
-
   <div class="row">
     <div class="col-lg-6 col-md-12 col-sm-12 mt-2 mb-3">
       <img src={{concert.image}} class="concert-image" alt="...">
     </div>
-  </div>
-  <div class="col-lg-6 col-md-12 col-sm-12">
-    <div class="jumbotron">
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <div class="jumbotron">
         <h3>Artist: <strong>{{concert.name}}</strong></h3>
         <hr class="my-6">
         <h3>Date: <strong>{{concert.datetime.strftime('%B %d, %Y @ %I:%M%p')}}</strong></h3>
@@ -27,104 +20,96 @@
         <hr class="my-6">
         <h3 class="display-7">Description:</h3>
         <p>{{concert.description}}</p>
+      </div>
     </div>
-   </div>
+  </div>
+  <div class="jumbotron">
+    <h1 class="ticket">Select Ticket Quantity</h1>
+    <hr class="my-6">
+  </div>
+  <section class="search-sec">
+    <div class="container">
+      <form action="#" method="POST" novalidate="novalidate">
+        <div class="ticket-quantity">
+          <div class="col-lg-12">
+            <div class="row">
 
-        <!-- Section: Social -->
-        <div class="social">
-            <div class="container text-center">
-                <a href="https://www.instagram.com/kirbochii/?hl=en"><i class="fa fa-phone"></i></a>
-                <a href="https://www.instagram.com/kirbochii/?hl=en"><i class="fa fa-facebook"></i></a>
-                <a href="https://www.instagram.com/kirbochii/?hl=en"><i class="fa fa-instagram"></i></a>
-                <a href="https://www.instagram.com/kirbochii/?hl=en"><i class="fa fa-google-plus"></i></a>
+              <!-- Drop down menu for tickets -->
+              <div class="col-lg-3 col-md-6 col-sm-12 p-0 mb-2">
+                <div class="ticket-dropdown">
+                  <select class="form-control">
+                    <option>Number of tickets</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Button trigger modal -->
+              <div class="col-lg-3 col-md-3 col-sm-12">
+                <button type="button" class="btn btn-danger wrn-btn" data-bs-toggle="modal"
+                  data-bs-target="#confirm-booking">
+                  Find Tickets
+                </button>
+              </div>
+
+              <!-- Modal -->
+              <div class="modal fade" id="confirm-booking" tabindex="-1" aria-labelledby="confirm-booking-label"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="confirm-booking-label">Yay! There's ticket's available!
+                      </h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <h3>Order Details</h3>
+                      <hr class="my-6">
+                      <p><strong>Event Name: </strong>{{concert.name}}</p>
+                      <p><strong>Date:</strong>{{concert.datetime.strftime('%B %d, %Y @ %I:%M%p')}}</p>
+                      <p><strong>Time:</strong> 5:00pm</p>
+                      <p><strong>Tickets:</strong> 2</p>
+                      <p><strong>Order ID:</strong> 016A50BAC</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <a href=history.html type="button" class="btn btn-success">Confirm Booking</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
 
-        <!--Select ticket section-->
-        <div class="jumbotron">
-            <h1 class="ticket">Select Ticket Quantity</h1>
-            <hr class="my-6">
-        </div>
-        <section class="search-sec">
-            <div class="container">
-                <form action="#" method="POST" novalidate="novalidate">
-                    <div class="ticket-quantity">
-                        <div class="col-lg-12">
-                            <div class="row">
-
-                                <!-- Drop down menu for tickets -->
-                                    <div class="col-lg-3 col-md-6 col-sm-12 p-0 mb-2">
-                                        <div class="ticket-dropdown">
-                                            <select class="form-control">
-                                                <option>Number of tickets</option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                <!-- Button trigger modal -->
-                                <div class="col-lg-3 col-md-3 col-sm-12">
-                                    <button type="button" class="btn btn-danger wrn-btn" data-bs-toggle="modal"
-                                    data-bs-target="#confirm-booking">
-                                    Find Tickets
-                                    </button>
-                                </div>
-                                <!-- Modal -->
-                                <div class="modal fade" id="confirm-booking" tabindex="-1" aria-labelledby="confirm-booking-label"
-                                aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="confirm-booking-label">Yay! There's ticket's available!
-                                                </h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <h3>Order Details</h3>
-                                                    <hr class="my-6">
-                                                    <p><strong>Event Name: </strong>{{concert.name}}</p>
-                                                    <p><strong>Date:</strong>{{concert.datetime.strftime('%B %d, %Y @ %I:%M%p')}}</p>
-                                                    <p><strong>Time:</strong> 5:00pm</p>
-                                                    <p><strong>Tickets:</strong> 2</p>
-                                                    <p><strong>Order ID:</strong> 016A50BAC</p>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <a href=history.html type="button" class="btn btn-success">Confirm Booking</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form> <!-- close the form tag for ticket section -->  
-                                <div class="jumbotron">
-                                    <h1 class="ticket">Comment Section</h1>
-                                    <hr class="my-6">
-                                </div>
-                                <div class="row border-bottom">
-                                    <form class='form' method='POST'>
-                                    <!-- testing -->
-                                    <!--{{wtf.render_form(cmtform)}}-->
-                                    {{wtf.render_form(cmtform, "/concerts/{0}/comment".format(concert.id))}}
-                                    {% for comment in concert.comments %}
-                                    <div class="col-md-12">  
-                                        <b>{{comment.user_id}}
-                                            <span class="ml-2 text-muted">{{comment.created_at}}</span>
-                                        </b>
-                                        <p>{{comment.text}}</p>
-                                    </div>  
-                                    {% endfor %}
-                                    </form><!-- close the form tag for comment section-->
-                                </div>   
-
-                            </div>
-                        </div>              
-                    </div>     
+            <div class="jumbotron">
+              <h1 class="ticket">Comment Section</h1>
+              <hr class="my-6">
             </div>
-        </section>   
-  
-</div><!-- tag for container -->
+            <div class="row border-bottom">
+              <form class='form' method='POST'>
+                <!-- testing -->
+                <!--{{wtf.render_form(cmtform)}}-->
+                {{wtf.render_form(cmtform, "/concerts/{0}/comment".format(concert.id))}}
+                {% for comment in concert.comments %}
+                <div class="col-md-12">
+                  <b>{{comment.user_id}}
+                    <span class="ml-2 text-muted">{{comment.created_at}}</span>
+                  </b>
+                  <p>{{comment.text}}</p>
+                </div>
+                {% endfor %}
+              </form><!-- close the form tag for comment section-->
+            </div>
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</div>
+
 {% endblock %}

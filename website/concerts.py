@@ -33,7 +33,8 @@ def create():
     image=db_file_path,
     datetime=form.datetime.data,
     address=form.address.data,
-    city=form.city.data 
+    city=form.city.data,
+    tickets=form.tickets.data
     )
     # add the object to the db session
     db.session.add(concert)
@@ -80,17 +81,17 @@ def check_upload_file(form):
 @login_required
 # changing comment(concert) to comment(id) for testing
 def comment(id):  
-    cmtform = CommentForm()  
-    concert_obj = Concert.query.filter_by(id=id).first()  
-    if cmtform.validate_on_submit():  
-      #read the comment from the form
-      #print("We got a comment: " + cmtform.text.data)
-      comment = Comment(text=cmtform.text.data,  
-                        concert=concert_obj,
-                        user=current_user) 
-      db.session.add(comment) 
-      db.session.commit() 
-      #flashing a message which needs to be handled by the html
-      flash('Your comment has been added', 'success')  
-      print('Your comment has been added', 'success') 
-    return redirect(url_for('concert.show', id=id))
+  cmtform = CommentForm()  
+  concert_obj = Concert.query.filter_by(id=id).first()  
+  if cmtform.validate_on_submit():  
+    #read the comment from the form
+    #print("We got a comment: " + cmtform.text.data)
+    comment = Comment(text=cmtform.text.data,  
+                      concert=concert_obj,
+                      user=current_user) 
+    db.session.add(comment) 
+    db.session.commit() 
+    #flashing a message which needs to be handled by the html
+    flash('Your comment has been added', 'success')  
+    print('Your comment has been added', 'success') 
+  return redirect(url_for('concert.show', id=id))
