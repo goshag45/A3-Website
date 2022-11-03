@@ -93,7 +93,7 @@ def check_upload_file(form):
 	fp.save(upload_path)
 	return db_upload_path
 
-@bp.route('/<id>/comment', methods = ['GET', 'POST'])  
+@bp.route('/<id>/', methods = ['GET', 'POST'])  
 @login_required
 # changing comment(concert) to comment(id) for testing
 def comment(id):  
@@ -101,10 +101,10 @@ def comment(id):
 	concert_obj = Concert.query.filter_by(id=id).first()  
 	if cmtform.validate_on_submit():  
 		#read the comment from the form
-		#print("We got a comment: " + cmtform.text.data)
+		print("We got a comment: " + cmtform.text.data)
 		comment = Comment(text=cmtform.text.data,  
-											concert=concert_obj,
-											user=current_user) 
+						concert=concert_obj,
+						user=current_user) 
 		db.session.add(comment) 
 		db.session.commit() 
 		#flashing a message which needs to be handled by the html

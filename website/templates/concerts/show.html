@@ -93,20 +93,17 @@
               <h1 class="ticket">Comment Section</h1>
               <hr class="my-6">
             </div>
+            <!-- comment section -->
             <div class="row border-bottom">
-              <form class='form' method='POST'>
-                <!-- testing -->
-                <!--{{wtf.render_form(cmtform)}}-->
-                {{wtf.render_form(cmtform, "/concerts/{0}/comment".format(concert.id))}}
-                {% for comment in concert.comments %}
-                <div class="col-md-12">
-                  <b>{{comment.user_id}}
-                    <span class="ml-2 text-muted">{{comment.created_at}}</span>
-                  </b>
-                  <p>{{comment.text}}</p>
-                </div>
-                {% endfor %}
-              </form><!-- close the form tag for comment section-->
+              {{wtf.render_form(cmtform, "/concerts/{0}/comment".format(concert.id))}}
+              {% for comment in concert.comments %}
+              <div class="col-md-12">
+                <b>{{comment.user_id}}
+                  <span class="ml-2 text-muted">{{comment.created_at}}</span>
+                </b>
+                <p>{{comment.text}}</p>
+              </div>
+              {% endfor %}
             </div>
 
           </div>
