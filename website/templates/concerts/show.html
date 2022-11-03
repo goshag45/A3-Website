@@ -101,16 +101,17 @@
 
             </div>
 
+            <!-- comment section -->
             <div class="jumbotron">
               <h1 class="ticket">Comment Section</h1>
               <hr class="my-6">
             </div>
-            <!-- comment section -->
+            
             <div class="row border-bottom">
               {{wtf.render_form(cmtform, "/concerts/{0}/comment".format(concert.id))}}
               {% for comment in concert.comments %}
               <div class="col-md-12">
-                <b>{{comment.user_id}}
+                <b>{{comment.user_name}}
                   <span class="ml-2 text-muted">{{comment.created_at}}</span>
                 </b>
                 <p>{{comment.text}}</p>

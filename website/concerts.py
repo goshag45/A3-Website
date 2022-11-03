@@ -89,20 +89,10 @@ def delete(id):
 		db.session.delete(to_be_delete)
 		db.session.commit()
 		flash("The event has been successfully deleted.")
-		return redirect(url_for('concert.create'))
+		return redirect(url_for('main.index'))
 	except:
 		flash("Unsuccessfully delete action.")
-		return redirect(url_for('concert.create'))
-	# if request.method == "POST":
-	# 	to_delete = Concert.query.get(id)
-
-	# 	try:
-	# 		db.session.query.filter_by(id=id).delete()
-	# 		db.session.commit()
-	# 		flash("The event has been successfully deleted.")
-	# 	except:
-	# 		db.session.rollback()
-	# 		flash("Your action is unsuccessful.")
+		return redirect(url_for('main.index'))
 
 def check_upload_file(form):
 	#get file data from form  
