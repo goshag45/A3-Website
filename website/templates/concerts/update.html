@@ -6,41 +6,41 @@
 {% for message in get_flashed_messages() %}
 
 <div class="alert alert-warning alert-dismissible fade show" role="alert">
-    {{ message }}
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  {{ message }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 
 {% endfor %}
 
 <div class="container mt-3">
-    <div class="row">
-        <div class="col mt-2 mb-3">
-            <h1>Update Event</h1>
-        </div>
+  <div class="row">
+    <div class="col mt-2 mb-3">
+      <h1>Update Event</h1>
     </div>
-    <div class="row">
+  </div>
+  <div class="row">
 
-        <form action="/concerts/update/{{id}}" class="form" method="POST" enctype=multipart/form-data>
-            {{form.csrf_token}}
-            <div class="col-md-6 col-lg-4 etc">
-                {{form.name(class="form-control or col-md-6 col-lg-4",
-                value=name_to_update.name)}}</div>
+    <form action="/concerts/update/{{name_to_update.id}}" class="form" method="POST" enctype=multipart/form-data>
+      {{form.csrf_token}}
+      <div class="col-md-6 col-lg-4 etc">
+        {{form.name(class="form-control or col-md-6 col-lg-4",
+        value=name_to_update.name)}}</div>
 
-            <div>{{form.genre(class="form-control", value=name_to_update.genre)}}</div>
+      <div>{{form.genre(class="form-control", value=name_to_update.genre)}}</div>
 
-            <div>{{form.datetime(class="form-control", value=name_to_update.datetime)}}</div>
+      <div>{{form.datetime(class="form-control", value=name_to_update.datetime)}}</div>
 
-            <div>{{form.address(class="form-control", value=name_to_update.address)}}</div>
+      <div>{{form.address(class="form-control", value=name_to_update.address)}}</div>
 
-            <div>{{form.city(class="form-control", value=name_to_update.city)}}</div>
+      <div>{{form.city(class="form-control", value=name_to_update.city)}}</div>
 
-            <div>{{form.description(class="form-control", value=name_to_update.description)}}
-            </div>
+      <div>{{form.description(class="form-control", value=name_to_update.description)}}
+      </div>
 
-            <div>{{form.tickets(class="form-control", value=name_to_update.tickets)}}</div>
-            <div>{{form.submit(class="btn btn-danger wrn-btn")}}</div>
+      <div>{{form.tickets(class="form-control", value=name_to_update.tickets)}}</div>
+      <div>{{form.submit(class="btn btn-danger wrn-btn")}}</div>
 
-        </form>
-    </div>
+    </form>
+  </div>
 </div>
 {% endblock %}

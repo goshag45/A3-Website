@@ -65,4 +65,4 @@ def login():
 def logout():
     logout_user()
     flash('You have been logged out')
-    return render_template('index.html')
+    return redirect('/')
