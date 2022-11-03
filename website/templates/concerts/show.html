@@ -112,13 +112,13 @@
               {% for comment in concert.comments %}
               <div class="col-md-12">
                 <b>{{comment.user_name}}
-                  <span class="ml-2 text-muted">{{comment.created_at}}</span>
+                  <span class="ml-2 text-muted">{{comment.created_at.strftime('%B %d, %Y @ %I:%M%p')}}</span>
                 </b>
                 <p>{{comment.text}}</p>
               </div>
               {% endfor %}
             </div>
-
+          
           </div>
         </div>
       </form>
