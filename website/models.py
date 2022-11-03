@@ -32,7 +32,7 @@ class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(400))
     created_at = db.Column(db.DateTime, default=datetime.now())
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    user_name = db.Column(db.String(100), db.ForeignKey('users.name'))
     concert_id = db.Column(db.Integer, db.ForeignKey('concerts.id'))
     def __repr__(self):
         return "<Comment: {}>".format(self.text)
