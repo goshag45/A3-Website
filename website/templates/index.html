@@ -3,12 +3,12 @@
 {% block header %}
 
 {% for message in get_flashed_messages() %}
-	
-	<div class="alert alert-warning alert-dismissible fade show" role="alert">
-	  {{ message }}
-	  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-	</div>
-	
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  {{ message }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
 {% endfor %}
 
 <div class="container mt-3">
@@ -92,67 +92,69 @@
         </div>
       </form>
     </div>
-  </section> 
+  </section>
 
   <div class="jumbotron">
     <h1 class="display-7">What's new in Brisbane</h1>
     <hr class="my-6">
   </div>
 
- {% for concert in concerts %}
+  <div class="row">
+  {% for concert in concerts %}
   <!--Create event 1 -->
-    <div class="col-lg-3 col-md-3 col-sm-6">
-      <div class="card mb-3">
-        <img src={{concert.image}} class="card-img" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">{{concert.name}}</h5>
-          <p class="card-text">{{concert.description}} </p>
-          <a href="{{url_for('concert.show', id=concert.id)}}" class="btn more-details">More Details</a>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Status:<span style="color:green"> Open</span></small>
-        </div>
+  <div class="col-lg-3 col-md-3 col-sm-6">
+    <div class="card mb-3">
+      <img src={{concert.image}} class="card-img" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{concert.name}}</h5>
+        <p class="card-text">{{concert.description}} </p>
+        <a href="{{url_for('concert.show', id=concert.id)}}" class="btn more-details">More Details</a>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Status:<span style="color:green"> Open</span></small>
       </div>
     </div>
+  </div>
   {% endfor %}
+  </div>
 
-    <div class="row">
-      <div class="jumbotron col-md-12 mt-3">
-        <h1 class="display-7">Most Popular Events</h1>
-        <hr class="my-6">
+  <div class="row">
+    <div class="jumbotron col-md-12 mt-3">
+      <h1 class="display-7">Most Popular Events</h1>
+      <hr class="my-6">
+    </div>
+  </div>
+
+  <!-- Page for most popular events -->
+  <div class="col-lg-12 col-md-12 col-sm-12">
+    <div class="card mb-3">
+      <img src="static/img/fav artist.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <a href="index.html" class="text-decoration-none link-dark">
+          <p class="card-title stretched-link"></p>
+        </a>
       </div>
     </div>
+  </div>
 
-    <!-- Page for most popular events -->
-    <div class="col-lg-12 col-md-12 col-sm-12">
-      <div class="card mb-3">
-        <img src="static/img/fav artist.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <a href="index.html" class="text-decoration-none link-dark">
-            <p class="card-title stretched-link"></p>
-          </a>
-        </div>
+  <div class="row">
+    <div class="jumbotron col-md-12">
+      <h1 class="display-7">Artists of the month</h1>
+      <hr class="my-6">
+    </div>
+  </div>
+
+  <!-- Artist of the month -->
+  <div class="col-lg-12 col-md-12 col-sm-12">
+
+    <div class="card mb-5">
+      <img src="static/img/artist of the month.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <a href="index.html" class="text-decoration-none link-dark">
+          <p class="card-title stretched-link"></p>
+        </a>
       </div>
     </div>
+  </div>
 
-    <div class="row">
-      <div class="jumbotron col-md-12">
-        <h1 class="display-7">Artists of the month</h1>
-        <hr class="my-6">
-      </div>
-    </div>
-
-    <!-- Artist of the month -->
-    <div class="col-lg-12 col-md-12 col-sm-12">
-
-      <div class="card mb-5">
-        <img src="static/img/artist of the month.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <a href="index.html" class="text-decoration-none link-dark">
-            <p class="card-title stretched-link"></p>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    {% endblock %}
+  {% endblock %}

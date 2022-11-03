@@ -42,7 +42,7 @@ body {
 
 .card-img {
     width: 100%;
-    height: 50vh;
+    height: 20vh;
     object-fit: cover;
 }
 
@@ -161,6 +161,3 @@ body {
     object-fit: cover;
     
 }
-
-
-
