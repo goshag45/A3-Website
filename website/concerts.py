@@ -49,6 +49,7 @@ def create():
 @login_required
 
 #def modify_concert(id):
+# Youtube tutorial for update the database: https://www.youtube.com/watch?v=Wicjkn5_nIQ
 #  # object modifier TODO
 #  form = ConcertForm():
 #  name_to_update = concert.query.get_or_404(id)
