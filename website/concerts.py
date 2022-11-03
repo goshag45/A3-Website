@@ -78,6 +78,25 @@ def update(id):
 				form=form,
 				name_to_update = name_to_update,
 				id = id)
+				
+@bp.route('/delete/<id>', methods = ['GET', 'POST'])
+@login_required
+def delete(id):
+	to_be_delete = Concert.query.get(id)
+	Concert.query.filter_by(id=id).delete()
+	db.session.commit()
+	flash("The event has been successfully deleted.")
+
+	# if request.method == "POST":
+	# 	to_delete = Concert.query.get(id)
+
+	# 	try:
+	# 		db.session.query.filter_by(id=id).delete()
+	# 		db.session.commit()
+	# 		flash("The event has been successfully deleted.")
+	# 	except:
+	# 		db.session.rollback()
+	# 		flash("Your action is unsuccessful.")
 
 def check_upload_file(form):
 	#get file data from form  
