@@ -1,5 +1,5 @@
 from datetime import datetime
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request, redirect, url_for, flash
 from .models import Concert, Comment
 from .forms import ConcertForm, CommentForm
 from flask_login import login_required, current_user
@@ -39,8 +39,8 @@ def create():
     db.session.add(concert)
     # commit to the database
     db.session.commit()
+    flash('Successfully created new concert', 'success')
     print('Successfully created new concert', 'success')
-
     #Always end with redirect when form is valid
     return redirect(url_for('concert.create'))
   return render_template('concerts/create.html', form=form)
@@ -91,6 +91,6 @@ def comment(id):
       db.session.add(comment) 
       db.session.commit() 
       #flashing a message which needs to be handled by the html
-      #flash('Your comment has been added', 'success')  
+      flash('Your comment has been added', 'success')  
       print('Your comment has been added', 'success') 
     return redirect(url_for('concert.show', id=id))

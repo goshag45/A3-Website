@@ -56,8 +56,8 @@ def login():
             #all good, set the login_user of flask_login to manage the user
             login_user(u1)
             return redirect(url_for('main.index'))
-        else:
-            flash(error)
+        # else:
+        #     flash(error)
     return render_template('user.html', form=login_form, heading='Login')
 
 @bp.route('/logout')
