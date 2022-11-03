@@ -7,17 +7,18 @@ ALLOWED_FILE = {'PNG', 'JPG', 'png', 'jpg'}
 
 #Create new concert
 class ConcertForm(FlaskForm):
+  genreChoices = "Pop", "Country", "Jazz", "RnB", "Rock"
+  cityChoices = "Brisbane", "Sydney", "Melbourne", "Adelaide", "Perth"
+
   name = StringField('Artist Name', validators=[InputRequired()])
   description = TextAreaField('Description', 
             validators=[InputRequired()])
-  genreChoices = "Pop", "Country", "Jazz", "RnB", "Rock"
   genre = SelectField(u'Field name', choices = genreChoices , validators = [InputRequired()])
   image = FileField('Destination Image', validators=[
     FileRequired(message='Image cannot be empty'),
     FileAllowed(ALLOWED_FILE, message='Only supports png,jpg,JPG,PNG')])
   datetime = DateTimeLocalField('Date', format='%Y-%m-%dT%H:%M', validators=[InputRequired("Missing Date or Time")])
   address = StringField('Address', validators=[InputRequired()])
-  cityChoices = "Brisbane", "Sydney", "Melbourne", "Adelaide", "Perth"
   city = SelectField(u'Field name', choices = cityChoices, validators = [InputRequired()])
   tickets = IntegerField('Tickets', validators = [
     NumberRange(min=1, max=100000),
