@@ -20,7 +20,7 @@ class Concert(db.Model):
     datetime = db.Column(db.DateTime, default=datetime.now())
     address = db.Column(db.String(80))
     city = db.Column(db.String(80))
-    description = db.Column(db.String(200))
+    description = db.Column(db.String(400))
     tickets = db.Column(db.Integer)
     image = db.Column(db.String(400))
     comments = db.relationship('Comment', backref='concert')

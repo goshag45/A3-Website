@@ -12,8 +12,7 @@ class ConcertForm(FlaskForm):
   statusChoices = "Open", "Cancelled", "Upcoming", "Inactive"
 
   name = StringField('Artist Name', validators=[InputRequired()])
-  description = TextAreaField('Description', 
-            validators=[InputRequired()])
+  description = TextAreaField('Description', validators=[InputRequired()])
   genre = SelectField(u'Field name', choices = genreChoices , validators = [InputRequired()])
   image = FileField('Destination Image', validators=[
     FileRequired(message='Image cannot be empty'),
@@ -24,7 +23,7 @@ class ConcertForm(FlaskForm):
   tickets = IntegerField('Tickets', validators = [
     NumberRange(min=1, max=100000),
     InputRequired()])
-  status = SelectField(u'Field name', choices = statusChoices , validators = [InputRequired()])
+  status = SelectField(u'Field name', choices = statusChoices, validators = [InputRequired()])
   submit = SubmitField("Create")
 
 #creates the login information
