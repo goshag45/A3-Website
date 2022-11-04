@@ -6,8 +6,8 @@ bp = Blueprint('main', __name__)
 
 @bp.route('/')
 def index():
-    concerts=Concert.query.all()
-    return render_template('index.html', concerts=concerts)
+    concert=Concert.query.all()
+    return render_template('index.html', concert=concert)
 
 
 @bp.route('/search')
@@ -15,8 +15,8 @@ def search():
     if request.args['search']:
         print(request.args['search'])
         artist_search = "%" + request.args['search'] + '%'
-        concerts = Concert.query.filter(Concert.name.like(artist_search)).all()
+        concert = Concert.query.filter(Concert.name.like(artist_search)).all()
         return render_template('concerts/search.html', concerts=concerts)
     else:
         concerts=Concert.query.all()
-        return render_template('index.html', concerts=concerts)
+        return render_template('index.html', concert=concert)
