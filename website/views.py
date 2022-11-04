@@ -18,4 +18,5 @@ def search():
         concerts = Concert.query.filter(Concert.name.like(concert_search)).all()
         return render_template('index.html', concerts=concerts)
     else:
-        return render_template('index.html')
+        concerts=Concert.query.all()
+        return render_template('index.html', concerts=concerts)
