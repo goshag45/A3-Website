@@ -1,7 +1,6 @@
-from datetime import datetime
 from flask import Blueprint, render_template, request, redirect, url_for, flash
-from datetime import datetime
 from .models import Concert, Comment
+from datetime import datetime
 from .forms import ConcertForm, CommentForm
 from flask_login import login_required, current_user
 from . import db
