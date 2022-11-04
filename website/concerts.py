@@ -34,8 +34,7 @@ def create():
 		datetime=form.datetime.data,
 		address=form.address.data,
 		city=form.city.data,
-		tickets=form.tickets.data,
-		status=form.status.data
+		tickets=form.tickets.data
 		)
 		# add the object to the db session
 		db.session.add(concert)
@@ -61,7 +60,6 @@ def update(id):
 		name_to_update.address = request.form['address']
 		name_to_update.city = request.form['city']
 		name_to_update.tickets = request.form['tickets']
-		name_to_update.status=request.form['status']
 		try:
 			db.session.commit()
 			flash("User Updated Successfully!")
@@ -71,30 +69,34 @@ def update(id):
 		except:
 			db.session.rollback()
 			flash("Error!  Looks like there was a problem...try again!")
-			return redirect(url_for('concert.create'), 
+			return render_template("concerts/update.html", 
 				form=form,
 				name_to_update = name_to_update,
 				id=id)
 	else:
-		return redirect(url_for('concert.create'), 
+		return render_template("concerts/update.html", 
 				form=form,
 				name_to_update = name_to_update,
 				id = id)
-
-# delete database records with flask: https://www.youtube.com/watch?v=7jKsHOZk-IE
+				
 @bp.route('/delete/<id>', methods = ['GET', 'POST'])
 @login_required
 def delete(id):
-	form = ConcertForm()
-	to_be_delete = Concert.query.get_or_404(id)
-	try:
-		db.session.delete(to_be_delete)
-		db.session.commit()
-		flash("The event has been successfully deleted.")
-		return redirect(url_for('main.index'))
-	except:
-		flash("Unsuccessfully delete action.")
-		return redirect(url_for('main.index'))
+	to_be_delete = Concert.query.get(id)
+	Concert.query.filter_by(id=id).delete()
+	db.session.commit()
+	flash("The event has been successfully deleted.")
+
+	# if request.method == "POST":
+	# 	to_delete = Concert.query.get(id)
+
+	# 	try:
+	# 		db.session.query.filter_by(id=id).delete()
+	# 		db.session.commit()
+	# 		flash("The event has been successfully deleted.")
+	# 	except:
+	# 		db.session.rollback()
+	# 		flash("Your action is unsuccessful.")
 
 def check_upload_file(form):
 	#get file data from form  
