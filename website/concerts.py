@@ -19,8 +19,8 @@ def show(id):
 
 @bp.route('/browse')
 def browse():
-    concerts=Concert.query.all()
-    return redirect(url_for('concert.browse', concerts=concerts))
+    concert = Concert.query.filter_by(id=id).first()
+    return redirect(url_for('concert.browse', concert=concert))
 
 @bp.route('/create', methods = ['GET', 'POST'])
 @login_required
