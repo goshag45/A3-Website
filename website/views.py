@@ -9,22 +9,9 @@ def index():
     concerts=Concert.query.all()
     return render_template('index.html', concerts=concerts)
 
+
 @bp.route('/search')
 def search():
-    # results = []
-    # search_option = search.data['search']
-
-    # if search.string:
-    #     if search.data['select'] == 'RnB':
-    #         display_result = db.session.query.filter('RnB').all()
-    #         results = display_result.all()
-    #     else:
-    #         print('cannot find your selected stuff')
-    #         redirect(url_for('main.index'))
-    # else:
-    #     print('cannot process your research')
-
-
     if request.args['search']:
         print(request.args['search'])
         print("I AM HERE HELLOOOOOOO")
