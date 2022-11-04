@@ -1,1 +1,1 @@
-web: gunicorn 'website:create_app()'
+web: gunicorn -w 1 'website:create_app()' --preload
