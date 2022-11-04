@@ -108,7 +108,7 @@ def check_upload_file(form):
 	fp.save(upload_path)
 	return db_upload_path
 
-@bp.route('/<id>/', methods = ['GET', 'POST'])  
+@bp.route('/<id>/comment', methods = ['POST'])  
 @login_required
 # changing comment(concert) to comment(id) for testing
 def comment(id):  
@@ -126,5 +126,3 @@ def comment(id):
 		flash('Your comment has been added', 'success')  
 		print('Your comment has been added', 'success') 
 	return redirect(url_for('concert.show', id=id))
-
-
