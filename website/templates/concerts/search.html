@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% import "bootstrap/form.html" as wtf %}
+{% block header %}
+
+{% for message in get_flashed_messages() %}
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  {{ message }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+{% endfor %}
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="col mt-2 mb-3">
+      <h1>Your Search Results</h1>
+    </div>
+  </div>
+
+    <div class="row">
+        {% for concert in concerts %}
+
+        <!--Booked Event 1-->
+        <div class="card mb-3 col-lg-10 col-xl-9">
+            <div class="row no-gutters">
+            <div class="col-lg-6 col-md-6">
+                <img src={{concert.image}} class="cardsearch-img">
+            </div>
+            <div class="col-md-6">
+                <div class="card-body">
+                <h4 class="card-title"><strong>Event:</strong> {{concert.name}}</h4>
+                <hr class="my-6">
+                <h4><strong>Status:</strong><span style="color:green"> {{concert.status}}</span></h4>
+                <h4><strong>Date:</strong> {{concert.datetime.strftime('%B %d, %Y @ %I:%M%p')}}</h4>
+                <h4><strong>Description:</strong> {{concert.description}}</h4>
+                <br>
+                <a href="{{url_for('concert.show', id=concert.id)}}" class="btn more-details">More Details</a>
+                </div>
+            </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+      
+
+
+  </div>
+</div>
+{% endblock %}

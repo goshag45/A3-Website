@@ -46,6 +46,12 @@ body {
     object-fit: cover;
 }
 
+.cardsearch-img {
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+}
+
 .prev-card-img {
     width: 100%;
     height: 35vh;
