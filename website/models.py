@@ -44,4 +44,4 @@ class Ticket(db.Model):
     quantity = db.Column(db.Integer, index=True, nullable=False)
     genre = db.Column(db.String(80), db.ForeignKey('concerts.genre'))
     address = db.Column(db.String(100), db.ForeignKey('concerts.address'))
-    concert_tickets = db.relationship('Ticket', backref='user')
+    users = db.relationship('User', backref='ticket')
