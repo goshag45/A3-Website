@@ -17,13 +17,14 @@ class Concert(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80))
     genre = db.Column(db.String(80))
-    datetime = db.Column(db.DateTime)
+    datetime = db.Column(db.DateTime, default=datetime.now())
     address = db.Column(db.String(80))
     city = db.Column(db.String(80))
     description = db.Column(db.String(200))
     tickets = db.Column(db.Integer)
     image = db.Column(db.String(400))
     comments = db.relationship('Comment', backref='concert')
+    status = db.Column(db.String(20))
     def __repr__(self):
         return "<Name: {}>".format(self.name)
 

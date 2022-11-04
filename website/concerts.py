@@ -34,7 +34,8 @@ def create():
 		datetime=form.datetime.data,
 		address=form.address.data,
 		city=form.city.data,
-		tickets=form.tickets.data
+		tickets=form.tickets.data,
+		status=form.status.data
 		)
 		# add the object to the db session
 		db.session.add(concert)
@@ -60,6 +61,7 @@ def update(id):
 		name_to_update.address = request.form['address']
 		name_to_update.city = request.form['city']
 		name_to_update.tickets = request.form['tickets']
+		name_to_update.status=request.form['status']
 		try:
 			db.session.commit()
 			flash("User Updated Successfully!")
