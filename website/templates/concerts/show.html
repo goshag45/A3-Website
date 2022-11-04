@@ -98,11 +98,7 @@
                   </div>
                 </div>
               </div>
-
             </div>
-
-            
-          
           </div>
         </div>
       </form>
@@ -112,7 +108,7 @@
         <h1 class="ticket">Comment Section</h1>
         <hr class="my-6">
       </div>
-      
+
       <div class="row border-bottom">
         {{wtf.render_form(cmtform, "/concerts/{0}/comment".format(concert.id))}}
         {% for comment in concert.comments %}
