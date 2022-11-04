@@ -34,7 +34,8 @@ def create():
 		datetime=form.datetime.data,
 		address=form.address.data,
 		city=form.city.data,
-		tickets=form.tickets.data
+		tickets=form.tickets.data,
+		status=form.status.data
 		)
 		# add the object to the db session
 		db.session.add(concert)
@@ -56,6 +57,7 @@ def update(id):
 		name_to_update.name = request.form['name']
 		name_to_update.description = request.form['description']
 		name_to_update.genre = request.form['genre']
+		
 		name_to_update.datetime = request.form['datetime']
 		name_to_update.address = request.form['address']
 		name_to_update.city = request.form['city']
@@ -65,7 +67,7 @@ def update(id):
 			flash("User Updated Successfully!")
 			return render_template("concerts/update.html", 
 				form=form,
-				name_to_update = name_to_update, id=id)
+				name_to_update=name_to_update, id=id)
 		except:
 			db.session.rollback()
 			flash("Error!  Looks like there was a problem...try again!")
@@ -86,17 +88,6 @@ def delete(id):
 	Concert.query.filter_by(id=id).delete()
 	db.session.commit()
 	flash("The event has been successfully deleted.")
-
-	# if request.method == "POST":
-	# 	to_delete = Concert.query.get(id)
-
-	# 	try:
-	# 		db.session.query.filter_by(id=id).delete()
-	# 		db.session.commit()
-	# 		flash("The event has been successfully deleted.")
-	# 	except:
-	# 		db.session.rollback()
-	# 		flash("Your action is unsuccessful.")
 
 def check_upload_file(form):
 	#get file data from form  
