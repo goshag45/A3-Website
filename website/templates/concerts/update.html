@@ -23,8 +23,7 @@
     <form action="/concerts/update/{{name_to_update.id}}" class="form" method="POST" enctype=multipart/form-data>
       {{form.csrf_token}}
       <div class="col-md-6 col-lg-4 etc">
-        {{form.name(class="form-control or col-md-6 col-lg-4",
-        value=name_to_update.name)}}</div>
+        {{form.name(class="form-control or col-md-6 col-lg-4", value=name_to_update.name)}}</div>
 
       <div>{{form.genre(class="form-control", value=name_to_update.genre)}}</div>
 
@@ -39,6 +38,7 @@
       <div>{{form.tickets(class="form-control", value=name_to_update.tickets)}}</div>
 
       <div>{{form.status(class="form-control", value=name_to_update.status)}}</div>
+      
       <div>{{form.submit(class="btn btn-danger wrn-btn")}}</div>
 
     </form>
