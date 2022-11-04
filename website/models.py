@@ -28,6 +28,14 @@ class Concert(db.Model):
     def __repr__(self):
         return "<Name: {}>".format(self.name)
 
+class Ticket(db.Model):
+    __tablename__='Concert tickets'
+    order_id = db.Column(db.Integer, primary_key=True)
+    quantity = db.Column(db.Integer, index=True, nullable=False)
+    genre = db.Column(db.String(80), db.ForeignKey('concerts.genre'))
+    address = db.Column(db.String(100), db.ForeignKey('concerts.address'))
+    
+
 class Comment(db.Model):
     __tablename__ = 'comments'
     id = db.Column(db.Integer, primary_key=True)
