@@ -53,12 +53,12 @@
 
   <section class="search-sec">
     <div class="container">
-      <form action="#" method="post" novalidate="novalidate">
+      <form action="{{url_for('main.search')}}">
         <div class="row">
           <div class="col-lg-12">
             <div class="row">
               <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                <input type="text" class="form-control" placeholder="Artist name">
+                <input type="text" name="search" class="form-control" placeholder="Artist name" id="SearchForm">
               </div>
 
               <div class="col-lg-3 col-md-3 col-sm-12 p-0">
@@ -89,7 +89,7 @@
                 </div>
               </div>
               <div class="col-lg-3 col-md-3 col-sm-12">
-                <a href="#" class="btn btn-danger search-button">Search</a>
+                <button type="submit" class="btn btn-danger search-button">Search</button>
               </div>
             </div>
           </div>
