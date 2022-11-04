@@ -39,8 +39,9 @@ class Comment(db.Model):
         return "<Comment: {}>".format(self.text)
 
 class Ticket(db.Model):
-    tablename='Concert tickets'
+    tablename='concert_tickets'
     order_id = db.Column(db.Integer, primary_key=True)
     quantity = db.Column(db.Integer, index=True, nullable=False)
     genre = db.Column(db.String(80), db.ForeignKey('concerts.genre'))
     address = db.Column(db.String(100), db.ForeignKey('concerts.address'))
+    concert_tickets = db.relationship('Ticket', backref='user')
