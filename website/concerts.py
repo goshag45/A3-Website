@@ -17,6 +17,11 @@ def show(id):
 		cmtform = CommentForm() 
 		return render_template('concerts/show.html', cmtform=cmtform, concert=concert, id=id)
 
+@bp.route('/browse')
+def browse():
+    concerts=Concert.query.all()
+    return redirect(url_for('concert.browse', concerts=concerts))
+
 @bp.route('/create', methods = ['GET', 'POST'])
 @login_required
 def create():
@@ -121,3 +126,5 @@ def comment(id):
 		flash('Your comment has been added', 'success')  
 		print('Your comment has been added', 'success') 
 	return redirect(url_for('concert.show', id=id))
+
+
