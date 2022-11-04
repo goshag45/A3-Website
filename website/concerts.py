@@ -1,5 +1,6 @@
 from datetime import datetime
 from flask import Blueprint, render_template, request, redirect, url_for, flash
+from datetime import datetime
 from .models import Concert, Comment
 from .forms import ConcertForm, CommentForm
 from flask_login import login_required, current_user
@@ -57,11 +58,13 @@ def update(id):
 		name_to_update.name = request.form['name']
 		name_to_update.description = request.form['description']
 		name_to_update.genre = request.form['genre']
-		
 		name_to_update.datetime = request.form['datetime']
 		name_to_update.address = request.form['address']
 		name_to_update.city = request.form['city']
 		name_to_update.tickets = request.form['tickets']
+		# try to commit it straight away instead going into try- statement error raise and fail to update the data
+		db.session.commit()
+		flash("Update successful!")
 		try:
 			db.session.commit()
 			flash("User Updated Successfully!")
