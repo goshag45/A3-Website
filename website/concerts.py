@@ -61,7 +61,7 @@ def update(id):
 	if request.method == "POST":
 		name_to_update.name = request.form['name']
 		name_to_update.genre = request.form['genre']
-		name_to_update.datetime = request.form['datetime']
+		name_to_update.datetime = datetime.strptime(request.form['datetime'], "%Y-%m-%dT%H:%M")
 		name_to_update.address = request.form['address']
 		name_to_update.city = request.form['city']
 		name_to_update.description = request.form['description']
