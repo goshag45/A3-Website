@@ -9,6 +9,7 @@ ALLOWED_FILE = {'PNG', 'JPG', 'png', 'jpg'}
 class ConcertForm(FlaskForm):
   genreChoices = "Pop", "Country", "Jazz", "RnB", "Rock"
   cityChoices = "Brisbane", "Sydney", "Melbourne", "Adelaide", "Perth"
+  statusChoices = "Open", "Cancelled", "Upcoming", "Inactive"
 
   name = StringField('Artist Name', validators=[InputRequired()])
   description = TextAreaField('Description', 
@@ -23,6 +24,7 @@ class ConcertForm(FlaskForm):
   tickets = IntegerField('Tickets', validators = [
     NumberRange(min=1, max=100000),
     InputRequired()])
+  status = SelectField(u'Field name', choices = statusChoices , validators = [InputRequired()])
   submit = SubmitField("Create")
 
 #creates the login information
