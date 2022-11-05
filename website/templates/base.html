@@ -31,8 +31,6 @@
 
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-
-          <a class="nav-item nav-link" href="{{url_for('concert.browse', id=id)}}">Browse All Events</a>
           <a class="nav-item nav-link" href="{{url_for('concert.create')}}">Create An Event</a>
 
           {% if current_user.is_authenticated %}
