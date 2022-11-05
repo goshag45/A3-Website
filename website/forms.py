@@ -23,6 +23,7 @@ class ConcertForm(FlaskForm):
   tickets = IntegerField('Tickets', validators = [
     NumberRange(min=1, max=100000),
     InputRequired()])
+  ticket_price = IntegerField('Tickets price', validators=[NumberRange(min=1), InputRequired()])
   status = SelectField(u'Field name', choices = statusChoices, validators = [InputRequired()])
   submit = SubmitField("Create")
 

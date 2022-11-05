@@ -27,6 +27,8 @@ def search():
     else:
         concerts=Concert.query.all()
         return render_template('index.html', concerts=concerts)
+
+        
 # @bp.route('/search')
 # def search():
 #     if request.args['search']:
