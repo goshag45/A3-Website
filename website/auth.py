@@ -55,6 +55,7 @@ def login():
         if error is None:
             #all good, set the login_user of flask_login to manage the user
             login_user(u1)
+            flash("You have logged in successfully!")
             return redirect(url_for('main.index'))
         # else:
         #     flash(error)
