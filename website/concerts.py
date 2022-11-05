@@ -61,7 +61,6 @@ def update(id):
         name_to_update.address = request.form['address']
         name_to_update.city = request.form['city']
         name_to_update.description = request.form['description']
-        name_to_update.tickets = request.form['tickets']
         name_to_update.status = request.form['status']
         # try to commit it straight away instead going into try- statement error raise and fail to update the data
         db.session.commit()
