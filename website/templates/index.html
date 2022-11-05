@@ -61,19 +61,15 @@
                 <input type="text" name="search" class="form-control" placeholder="Artist name" id="SearchForm">
               </div>
 
-              <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                  <div class="genre-dropdown">
-                    <select class="form-control" name="search">
-                      <option>Select a genre</option>
-                      <option>Pop</option>
-                      <option>Country</option>
-                      <option>Jazz</option>
-                      <option>RnB</option>
-                      <option>Rock</option>
-                      <option>Other...</option>
-                    </select>
-                  </div>
-              </div>
+              <div class="col-lg-3 col-md-3 col-sm-12 p-0 mb-2">
+              <input type="text" name="genre_options" list="genre_options">
+              <datalist id="genre_options">
+                <option>Pop</option>
+                <option>Country</option>
+                <option>Jazz</option>
+                <option>RnB</option>
+                <option>Rock</option>
+              </datalist>
 
               <!-- Drop down menu for city -->
               <div class="col-lg-3 col-md-3 col-sm-12 p-0 mb-2">
