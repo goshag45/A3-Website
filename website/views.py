@@ -18,12 +18,13 @@ def search():
         search_query = "%" + request.args['search'] + '%'
         concerts = Concert.query.filter(Concert.name.like(search_query)).all()
         # Don't know what I'm doing here, just testing
-        if request.option != 'select a genre':
-            concerts_genre = Concert.query.filter(Concert.genre.data.like(search_query)).all()
-        else:
-            print("it is not working. sorry")
+        #if request.option != 'select a genre':
+         #   concerts_genre = Concert.query.filter(Concert.genre.data.like(search_query)).all()
+        #else:
+         #   print("it is not working. sorry")
         #concerts = Concert.query.filter(Concert.city.like(search_query)).all()
-        return render_template('concerts/search.html', concerts=concerts, concerts_genre=concerts_genre)
+        #return render_template('concerts/search.html', concerts=concerts, concerts_genre=concerts_genre)
+        return render_template('concerts/search.html', concerts=concerts)
     else:
         concerts=Concert.query.all()
         return render_template('index.html', concerts=concerts)
