@@ -20,9 +20,9 @@
   </div>
   <div class="row">
 
-    <form class="form" method="POST" enctype=multipart/form-data>
+    <form class="form" method="POST" enctype="multipart/form-data">
       {{form.csrf_token}}
-      <div class="col-md-6 col-lg-8 etc">{{form.name(class="form-control or col-md-6 col-lg-4", placeholder="E.g.
+      <div class="col-md-6 col-lg-8 etc">{{form.name(class="form-control col-md-6 col-lg-4", placeholder="E.g.
         NIKI")}}</div>
       <br>
       <div class="col-md-6 col-lg-4 etc">{{form.genre(class="form-control")}}</div>
@@ -38,8 +38,7 @@
       <br>
       <div class="col-md-6 col-lg-4 etc">{{form.image(class="form-control")}}</div>
       <br>
-      <div class="col-md-6 col-lg-4 etc">{{form.tickets(class="form-control", placeholder="Please enter number of tickets to be sold (maximum 100,000)")}}</div>
-      <br>
+
       <div class="col-md-6 col-lg-4 etc">{{form.status(class="form-control", placeholder="status here")}}
       <br>
       <div class="col-md-6 col-lg-4 etc">{{form.submit(class="btn btn-danger wrn-btn")}}</div>

@@ -20,10 +20,10 @@ class ConcertForm(FlaskForm):
   datetime = DateTimeLocalField('Date', format='%Y-%m-%dT%H:%M', validators=[InputRequired("Missing Date or Time")])
   address = StringField('Address', validators=[InputRequired()])
   city = SelectField(u'Field name', choices = cityChoices, validators = [InputRequired()])
-  tickets = IntegerField('Tickets', validators = [
-    NumberRange(min=1, max=100000),
-    InputRequired()])
-  ticket_price = IntegerField('Tickets price', validators=[NumberRange(min=1), InputRequired()])
+  # tickets = IntegerField('Tickets', validators = [
+  #   NumberRange(min=1, max=100000),
+  #   InputRequired()])
+  # ticket_price = IntegerField('Tickets price', validators=[NumberRange(min=1), InputRequired()])
   status = SelectField(u'Field name', choices = statusChoices, validators = [InputRequired()])
   submit = SubmitField("Create")
 
